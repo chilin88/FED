@@ -40,11 +40,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   Hoofdpagina  
-  <img src="readme-images/bbc_hoofdpagina.jpeg" width="375px" alt="hoofdpagina van de mobiele headspace website">
+  <img src="readme-images/headspace_hoofdpagina.jpeg" width="375px" alt="hoofdpagina van de mobiele headspace website">
 
   #### Screenshot(s) van de tweede pagina (small screen):
   hier de naam van de pagina  
-  <img src="readme-images/bbc_nieuwspagina.jpeg" width="375px" alt="nieuwspagina van de mobiele headspace website">
+  <img src="readme-images/headspace_slaappagina.jpeg" width="375px" alt="nieuwspagina van de mobiele headspace website">
  
 </details>
 
