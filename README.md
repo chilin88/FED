@@ -36,15 +36,15 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  https://www.bbc.com/
+  https://www.headspace.com/
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   Hoofdpagina  
-  <img src="readme-images/bbc_hoofdpagina.jpeg" width="375px" alt="hoofdpagina van de mobiele bbc website">
+  <img src="readme-images/bbc_hoofdpagina.jpeg" width="375px" alt="hoofdpagina van de mobiele headspace website">
 
   #### Screenshot(s) van de tweede pagina (small screen):
   hier de naam van de pagina  
-  <img src="readme-images/bbc_nieuwspagina.jpeg" width="375px" alt="nieuwspagina van de mobiele bbc website">
+  <img src="readme-images/bbc_nieuwspagina.jpeg" width="375px" alt="nieuwspagina van de mobiele headspace website">
  
 </details>
 
