@@ -91,7 +91,6 @@ Om inzicht te krijgen in de digitale toegankelijkheid van de Headspace-website, 
   * **Headings:** Bij bepaalde koppen werd wel aangekondigd dat het om een *heading* ging, maar werd de feitelijke tekstinhoud niet goed voorgelezen.
   * **Irrelevante groeperingen:** De lezer benoemde meerdere keren algemene HTML-groepen/containers, wat voor ruis en verwarring zorgde.
   * **Terugkeren naar navigatie:** Vanaf de onderkant van de pagina weer omhoog navigeren kostte veel tijd en vereiste het doorlopen van tientallen tussenliggende elementen; er ontbrak een duidelijke *back to top* of semantisch skip-mechanisme.
-  * 
 </details>
 
 
