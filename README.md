@@ -58,6 +58,40 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
 
+Om inzicht te krijgen in de digitale toegankelijkheid van de Headspace-website, heb ik verschillende disability-simulatietests uitgevoerd. Hieronder staan de belangrijkste bevindingen per test.
+
+---
+
+### 1. Wazige bril (Visuele beperking / Lage gezichtsscherpte)
+* **Kleine typografie:** Kleinere letters en secundaire teksten waren vanaf een normale werkafstand niet leesbaar; ik moest erg dicht naar het scherm toe buigen.
+* **Muiscursor:** De cursor/pointer was lastig te volgen en raakte snel uit zicht tegen de achtergrond.
+* **Animaties & Vormen:** Grote vlakken en bewegende elementen/animaties vielen juist wel goed op en bleven herkenbaar.
+
+---
+
+### 2. Bril met zwarte vlek (Centraal gezichtsveldverlies / Maculadegeneratie)
+* **Layout & Vlakverdeling:** Door veel witruimte en grote blokken bleef het merendeel van de content bruikbaar en zichtbaar via het beperkte zicht.
+* **Leesbaarheid:** De typografie op Headspace is over het algemeen ruim opgezet. Kleinere tekstblokken waren na enig scrollen en herpositioneren alsnog goed te lezen.
+
+---
+
+### 3. Schokapparaat (Motorische beperking / Tremoren & Parkinson-simulatie)
+* **Fysieke interactie:** De aanhoudende trillingen/schokjes maakten nauwkeurig richten erg lastig. Typen leidde vaak tot fouten.
+* **Nauwkeurigheid van de cursor:** Het trackpad bedienen vereiste veel concentratie; kleine interactieve knoppen en targets waren lastig accuraat aan te klikken.
+* **Hover-states:** Elementen die direct reageren op hover activeerden soms per ongeluk doordat de cursor wegglipte naar omliggende links.
+* **Scrollen:** Lineair scrollen door de content verliep wel soepel.
+
+---
+
+### 4. Screenreader / VoiceOver (Auditieve navigatie voor blinden en slechtzienden)
+* **Tekst & Structuur:** De screenreader leest bodyteksten, navigatielijsten en links helder op en geeft de structuur (bijv. lijsten) goed aan.
+* **Tekstinvoer:** Tijdens het typen wordt elke letter en aansluitend het hele woord auditief bevestigd.
+* **Gevonden knelpunten:**
+  * **Sponsors/Partners:** Sommige visuele onderdelen (zoals sponsor- of partnerlogo's) werden overgeslagen of misten een duidelijke beschrijving (`alt`-tekst).
+  * **Headings:** Bij bepaalde koppen werd wel aangekondigd dat het om een *heading* ging, maar werd de feitelijke tekstinhoud niet goed voorgelezen.
+  * **Irrelevante groeperingen:** De lezer benoemde meerdere keren algemene HTML-groepen/containers, wat voor ruis en verwarring zorgde.
+  * **Terugkeren naar navigatie:** Vanaf de onderkant van de pagina weer omhoog navigeren kostte veel tijd en vereiste het doorlopen van tientallen tussenliggende elementen; er ontbrak een duidelijke *back to top* of semantisch skip-mechanisme.
+  * 
 </details>
 
 
