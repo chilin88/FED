@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "Headspace Apercu";
+    src: url("fonts/HeadspaceApercu-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Headspace Apercu";
+    src: url("fonts/HeadspaceApercu-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Headspace Apercu";
+    src: url("fonts/HeadspaceApercu-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    --color-primary-blue: #0061EF;
+    --color-text-dark: #2D2C2B;
+    --color-dark-blue: #101340;
+    --color-card-grey: #F9F4F2;
+    --color-yellow: #FFC000;
+    --color-white: #ffffff;
+    --color-footer-dark: #44423F;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+}
+
+/* Haalt overbodige marges van titels en alinea's weg */
+h1, h2, h3, p, figure, fieldset {
+    margin: 0;
+    padding: 0;
+}
+
+/* Haalt standaard bolletjes en inspringing van alle lijsten weg */
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Zorgt dat afbeeldingen nooit buiten hun container vliegen */
+img {
+    max-width: 100%;
+    display: block;
+}
