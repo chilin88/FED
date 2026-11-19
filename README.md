@@ -65,7 +65,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor week 1</summary>
 
   ### Wat ik heb gedaan
-- Ik heb gekozen voor **Headspace** (in plaats van Ticketmaster), omdat een website die ik er leuk uit vond zien me meer zou motiveren om ermee aan de slag te gaan.
+- Ik heb gekozen voor Headspace (in plaats van Ticketmaster), omdat een website die ik er leuk uit vond zien me meer zou motiveren om ermee aan de slag te gaan.
 - Ik heb tijdens de les een toegankelijkheidstest gedaan met behulp van verschillende middelen om de Headspae website te testen.
 - Ik ben begonnen met de **breakdownschets** om te zien hoe de pagina's en verschillende onderdelen opgebouwd zijn. Al snel werd duidelijk dat Headspace behoorlijk wat secties en interactieve elementen heeft, wat het qua uitwerking best uitdagend maakt.
 
@@ -164,14 +164,14 @@ De drempel voor dit vak zat bij mij best hoog, mede omdat ik het eerder meerdere
 
 
 
-## Week 4 — HTML afronden & begin CSS
+## Week 4 - HTML afronden & begin CSS
 
 
 <details>
   <summary>uitwerken voor week 4</summary>
 
   ### Wat ik heb gedaan
-- Ik heb mijn HTML verder afgerond en ben begonnen met **CSS**.
+- Ik heb mijn HTML verder afgerond en ben begonnen met CSS.
 - Al snel merkte ik dat CSS nog meer tijd en geduld kostte dan HTML; veel onderdelen lukten, maar andere wilden totaal niet meewerken.
 
 ### Mentale stand & update
@@ -190,8 +190,8 @@ Ik dacht dat ik lang over HTML had gedaan, maar met CSS kwam er nog meer frustra
   <summary>uitwerken voor week 5</summary>
 
   ### Wat ik heb gedaan
-- In week 5 heb ik intensief aan de **CSS** gewerkt en veel geworsteld met positionering.
-- Vooral de **navigatie** was lastig: ik paste één ding aan en meteen versprong er op allerlei plekken iets anders. Mijn vaste strategie was om met `Ctrl+Z` terug te gaan voordat alles volledig in de war stond en dan opnieuw te kijken.
+- In week 5 heb ik intensief aan de CSS gewerkt en veel geworsteld met positionering.
+- Vooral de navigatie was lastig: ik paste één ding aan en meteen versprong er op allerlei plekken iets anders. Mijn vaste strategie was om met `Ctrl+Z` terug te gaan voordat alles volledig in de war stond en dan opnieuw te kijken.
 - Met de **carrousels** had ik ook veel moeite; één carrousel op de hoofdpagina bleef dwarsliggen ondanks dat ik dacht dat mijn code klopte. Uiteindelijk heb ik bewust besloten om daar niet in te blijven vastlopen en door te gaan met de rest van de website.
 
 ### Mentale stand & update
