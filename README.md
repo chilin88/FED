@@ -67,7 +67,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Wat ik heb gedaan
 - Ik heb gekozen voor **Headspace** (in plaats van Ticketmaster), omdat een website die ik er leuk uit vond zien me meer zou motiveren om ermee aan de slag te gaan.
 - Ik heb tijdens de les een toegankelijkheidstest gedaan met behulp van verschillende middelen om de Headspae website te testen.
-- - Ik ben begonnen met de **breakdownschets** om te zien hoe de pagina's en verschillende onderdelen opgebouwd zijn. Al snel werd duidelijk dat Headspace behoorlijk wat secties en interactieve elementen heeft, wat het qua uitwerking best uitdagend maakt.
+- Ik ben begonnen met de **breakdownschets** om te zien hoe de pagina's en verschillende onderdelen opgebouwd zijn. Al snel werd duidelijk dat Headspace behoorlijk wat secties en interactieve elementen heeft, wat het qua uitwerking best uitdagend maakt.
 
 ### Toegankelijkheidstest 1/2 (week 1)
 Om inzicht te krijgen in de digitale toegankelijkheid van de Headspace-website heb ik verschillende disability-simulatietests uitgevoerd. Hieronder staan de belangrijkste bevindingen per test:
