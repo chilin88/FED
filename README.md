@@ -191,11 +191,11 @@ Ik dacht dat ik lang over HTML had gedaan, maar met CSS kwam er nog meer frustra
 
   ### Wat ik heb gedaan
 - In week 5 heb ik intensief aan de CSS gewerkt en veel geworsteld met positionering.
-- Vooral de navigatie was lastig: ik paste één ding aan en meteen versprong er op allerlei plekken iets anders. Mijn vaste strategie was om met `Ctrl+Z` terug te gaan voordat alles volledig in de war stond en dan opnieuw te kijken.
+- Vooral de navigatie was lastig: ik paste één ding aan en meteen versprong er op allerlei plekken iets anders. Mijn vaste strategie was om met Ctrl+Z terug te gaan voordat alles volledig in de war stond en dan opnieuw te kijken.
 - Met de **carrousels** had ik ook veel moeite; één carrousel op de hoofdpagina bleef dwarsliggen ondanks dat ik dacht dat mijn code klopte. Uiteindelijk heb ik bewust besloten om daar niet in te blijven vastlopen en door te gaan met de rest van de website.
 
 ### Mentale stand & update
-Dit was een zware en soms echt frustrerende week: het gevoel dat ik niet codeer-getalenteerd ben en dat alles verspringt kan dan flink aan me trekken. Het loslaten van die ene vastgelopen carrousel en het gebruik van `Ctrl+Z` hielp om niet helemaal te verzuipen en toch verder te komen.
+Dit was een zware en soms echt frustrerende week: het gevoel dat ik niet codeer-getalenteerd ben en dat alles verspringt kan dan flink aan me trekken. Het loslaten van die ene vastgelopen carrousel en het gebruik van Ctrl+Z hielp om niet helemaal te verzuipen en toch verder te komen.
 
 </details>
 
