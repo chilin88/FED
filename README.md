@@ -107,12 +107,12 @@ Ik begon deze nieuwe poging met goede moed omdat Headspace er aantrekkelijk uitz
 <img src="readme-images/wcagcheck1.4.jpeg" width="375px" alt="WCAG checklist pagina 4/5">
 <img src="readme-images/wcagcheck1.4.jpeg" width="375px" alt="WCAG checklist pagina 5/5">
 
-De eerste toegankelijkheidstest is uitgevoerd samen met mijn klasgenoot Susan aan de hand van de WCAG-checklist. Over het algemeen zag de website er volgens haar al erg netjes en verzorgd uit, met voldoende witruimte en een duidelijke indeling. De meeste punten stonden dan ook direct op 'yes'.
+De eerste toegankelijkheidstest is uitgevoerd door mijn klasgenoot Susan aan de hand van de WCAG-checklist. Over het algemeen zag de website er volgens haar al erg netjes en verzorgd uit, met voldoende witruimte en een duidelijke indeling. De meeste punten stonden dan ook direct op 'yes'.
 
 Wel kwamen er een paar kleine aandachtspunten naar voren:
-* **HTML-validatie:** De validator gaf nog een klein aantal foutmeldingen (*"possible, but has a few errors"*).
-* **Appearance (Dark mode):** Ondersteuning voor *dark mode* en *high-contrast mode* niet aanwezig.
-* **Overig:** Op het moment van testen stonden er geen audiofragmenten op de pagina (waardoor het onderdeel *Media* nog niet van toepassing was.
+- **HTML-validatie:** De validator gaf nog een klein aantal foutmeldingen (*"possible, but has a few errors"*).
+- **Appearance (Dark mode):** Ondersteuning voor *dark mode* en *high-contrast mode* niet aanwezig.
+- **Overig:** Op het moment van testen stonden er geen audiofragmenten op de pagina (waardoor het onderdeel *Media* nog niet van toepassing was.
 
 </details>
 
@@ -249,13 +249,23 @@ Omdat ik mijn eerste deadline niet had gehaald en dit mijn laatste kans is met h
 - 2e toegankelijkheidstest afgenomen
 - **Oplevering:** Bestanden en verwijzingen nagelopen, deze `README.md` bijgewerkt en de website op GitHub / DLO klaargezet voor de herkansing en het eindgesprek.
 
-### WCAG checklist - Toegankelijkheidstest 2/2
+### WCAG checklist - Test 2 (uitgevoerd door mijzelf)
 
 <img src="readme-images/wcagcheck2.1.jpeg" width="375px" alt="WCAG checklist pagina 1/5">
 <img src="readme-images/wcagcheck2.2.jpeg" width="375px" alt="WCAG checklist pagina 2/5">
 <img src="readme-images/wcagcheck2.3.jpeg" width="375px" alt="WCAG checklist pagina 3/5">
 <img src="readme-images/wcagcheck2.4.jpeg" width="375px" alt="WCAG checklist pagina 4/5">
 <img src="readme-images/wcagcheck2.4.jpeg" width="375px" alt="WCAG checklist pagina 5/5">
+
+De tweede toegankelijkheidstest heb ik zelf uitgevoerd nadat ik de volledige website had afgerond.
+
+**Resultaten van de controle:**
+- **Code & Validatie:** Ik heb in VS Code gecontroleerd of er nog errors in mijn code aanwezig zijn en alles is nu foutloos.
+- **Media (Audio):** De audiofragmenten zijn op de pagina's te vinden, spelen niet automatisch af (`autoplay` staat uit) en kunnen met een knop worden gepauzeerd.
+
+**Bewuste keuzes (conform origineel):**
+- **Appearance (Dark & high-contrast mode):** Net als op de originele Headspace-website heb ik geen *dark mode* of aparte *high-contrast mode* gebouwd, maar de vaste lichte huisstijl aangehouden.
+- **Audio-transcripties:** Bij de audiofragmenten ontbreken uitgeschreven transcripties, omdat deze op de originele pagina ook niet aanwezig zijn.
 
 
 ### Mentale stand & update
