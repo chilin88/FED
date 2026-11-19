@@ -99,6 +99,7 @@ Om inzicht te krijgen in de digitale toegankelijkheid van de Headspace-website h
 ### Mentale stand & update
 Ik begon deze nieuwe poging met goede moed omdat Headspace er aantrekkelijk uitzag en ik een frisse start wilde maken. Tegelijk voelde ik bij het zien van alle onderdelen al wel dat het best een pittige kluif ging worden, zeker omdat coderen me niet vanzelf afgaat.
 
+</details>
 
 
 
