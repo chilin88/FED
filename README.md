@@ -49,11 +49,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   Hoofdpagina  
-  <img src="readme-images/headspace_hoofdpagina.jpeg" width="375px" alt="hoofdpagina van de mobiele headspace website">
+  <img src="readme-images/headspace_headspace_main.png" width="375px" alt="hoofdpagina van de mobiele headspace website">
 
   #### Screenshot(s) van de tweede pagina (small screen):
   hier de naam van de pagina  
-  <img src="readme-images/headspace_slaappagina.jpeg" width="375px" alt="nieuwspagina van de mobiele headspace website">
+  <img src="readme-images/headspace_headspace_sleep.png" width="375px" alt="nieuwspagina van de mobiele headspace website">
  
 </details>
 
@@ -98,6 +98,14 @@ Om inzicht te krijgen in de digitale toegankelijkheid van de Headspace-website h
 
 ### Mentale stand & update
 Ik begon deze nieuwe poging met goede moed omdat Headspace er aantrekkelijk uitzag en ik een frisse start wilde maken. Tegelijk voelde ik bij het zien van alle onderdelen al wel dat het best een pittige kluif ging worden, zeker omdat coderen me niet vanzelf afgaat.
+
+### WCAG checklist - Toegankelijkheidstest 1/2
+
+<img src="readme-images/wcagcheck1.1.jpeg" width="375px" alt="WCAG checklist pagina 1/5">
+<img src="readme-images/wcagcheck1.2.jpeg" width="375px" alt="WCAG checklist pagina 2/5">
+<img src="readme-images/wcagcheck1.3.jpeg" width="375px" alt="WCAG checklist pagina 3/5">
+<img src="readme-images/wcagcheck1.4.jpeg" width="375px" alt="WCAG checklist pagina 4/5">
+<img src="readme-images/wcagcheck1.4.jpeg" width="375px" alt="WCAG checklist pagina 5/5">
 
 </details>
 
@@ -234,8 +242,18 @@ Omdat ik mijn eerste deadline niet had gehaald en dit mijn laatste kans is met h
 - 2e toegankelijkheidstest afgenomen
 - **Oplevering:** Bestanden en verwijzingen nagelopen, deze `README.md` bijgewerkt en de website op GitHub / DLO klaargezet voor de herkansing en het eindgesprek.
 
+### WCAG checklist - Toegankelijkheidstest 2/2
+
+<img src="readme-images/wcagcheck2.1.jpeg" width="375px" alt="WCAG checklist pagina 1/5">
+<img src="readme-images/wcagcheck2.2.jpeg" width="375px" alt="WCAG checklist pagina 2/5">
+<img src="readme-images/wcagcheck2.3.jpeg" width="375px" alt="WCAG checklist pagina 3/5">
+<img src="readme-images/wcagcheck2.4.jpeg" width="375px" alt="WCAG checklist pagina 4/5">
+<img src="readme-images/wcagcheck2.4.jpeg" width="375px" alt="WCAG checklist pagina 5/5">
+
+
 ### Mentale stand & update
 Ik merk dat ik er alles op zet om deze herkansing te halen ook al kostte me dit een paar mental breakdowns, want het zou zonde zijn als al deze tijd en moeite voor niets is geweest. Door mijn code op te schonen en van duidelijke comments te voorzien voelt het geheel nu veel rustiger en overzichtelijker dan aan het begin van het puzzelen.
+
 
 </details>
 
