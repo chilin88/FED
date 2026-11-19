@@ -69,6 +69,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 - Ik heb tijdens de les een toegankelijkheidstest gedaan met behulp van verschillende middelen om de Headspae website te testen.
 - Ik ben begonnen met de **breakdownschets** om te zien hoe de pagina's en verschillende onderdelen opgebouwd zijn. Al snel werd duidelijk dat Headspace behoorlijk wat secties en interactieve elementen heeft, wat het qua uitwerking best uitdagend maakt.
 
+
+  ### Breakdownschets hoofdpagina: 
+  <img src="readme-images/breakdownschets_main.jpg" width="375px" alt="breakdown van de hoofdpagina">
+
+  ### Breakdownschets slaappagina: 
+  <img src="readme-images/breakdownschets_sleep.jpg" width="375px" alt="breakdown van de slaappagina">
+
 ### Toegankelijkheidstest 1/2 (week 1)
 Om inzicht te krijgen in de digitale toegankelijkheid van de Headspace-website heb ik verschillende disability-simulatietests uitgevoerd. Hieronder staan de belangrijkste bevindingen per test:
 
@@ -123,15 +130,11 @@ Wel kwamen er een paar kleine aandachtspunten naar voren:
 <details>
   <summary>uitwerken na afloop 3<sup>e</sup> werkgroep</summary>
 
-  -BREAKDOWNSCHETS TOEVOEGEN
-  ### de hele pagina: 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van de hele pagina">
+  ### Hoofdpagina: 
+  <img src="readme-images/breakdownschets_main.jpg" width="375px" alt="breakdown van de hele pagina">
 
-  ### dynamisch deel (bijv menu): 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van een dynamisch deel">
-
-  ### wellicht nog een dynamisch deel (bijv filter): 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van nog een dynamisch deel">
+  ### Slaappagina: 
+  <img src="readme-images/breakdownschets_sleep.jpg" width="375px" alt="breakdown van de hele pagina">
 
 </details>
 
