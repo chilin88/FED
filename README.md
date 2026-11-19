@@ -172,7 +172,7 @@ De drempel voor dit vak zat bij mij best hoog, mede omdat ik het eerder meerdere
 
   ### Wat ik heb gedaan
 - Ik heb mijn HTML verder afgerond en ben begonnen met CSS.
-- Al snel merkte ik dat CSS nog meer tijd en geduld kostte dan HTML; veel onderdelen lukten, maar andere wilden totaal niet meewerken.
+- Al snel merkte ik dat CSS nog meer tijd en geduld kostte dan HTML. Veel onderdelen lukten, maar andere wilden totaal niet meewerken.
 
 ### Mentale stand & update
 Ik dacht dat ik lang over HTML had gedaan, maar met CSS kwam er nog meer frustratie bij kijken. Zodra ik ergens niet uitkwam, merkte ik dat twijfel en ongeduld sneller opspeelden, al gaf een werkend stukje af en toe ook weer motivatie.
