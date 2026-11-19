@@ -99,13 +99,20 @@ Om inzicht te krijgen in de digitale toegankelijkheid van de Headspace-website h
 ### Mentale stand & update
 Ik begon deze nieuwe poging met goede moed omdat Headspace er aantrekkelijk uitzag en ik een frisse start wilde maken. Tegelijk voelde ik bij het zien van alle onderdelen al wel dat het best een pittige kluif ging worden, zeker omdat coderen me niet vanzelf afgaat.
 
-### WCAG checklist - Toegankelijkheidstest 1/2
+### WCAG checklist - Test 1 (uitgevoerd door klasgenoot Susan)
 
 <img src="readme-images/wcagcheck1.1.jpeg" width="375px" alt="WCAG checklist pagina 1/5">
 <img src="readme-images/wcagcheck1.2.jpeg" width="375px" alt="WCAG checklist pagina 2/5">
 <img src="readme-images/wcagcheck1.3.jpeg" width="375px" alt="WCAG checklist pagina 3/5">
 <img src="readme-images/wcagcheck1.4.jpeg" width="375px" alt="WCAG checklist pagina 4/5">
 <img src="readme-images/wcagcheck1.4.jpeg" width="375px" alt="WCAG checklist pagina 5/5">
+
+De eerste toegankelijkheidstest is uitgevoerd samen met mijn klasgenoot Susan aan de hand van de WCAG-checklist. Over het algemeen zag de website er volgens haar al erg netjes en verzorgd uit, met voldoende witruimte en een duidelijke indeling. De meeste punten stonden dan ook direct op 'yes'.
+
+Wel kwamen er een paar kleine aandachtspunten naar voren:
+* **HTML-validatie:** De validator gaf nog een klein aantal foutmeldingen (*"possible, but has a few errors"*).
+* **Appearance (Dark mode):** Ondersteuning voor *dark mode* en *high-contrast mode* niet aanwezig.
+* **Overig:** Op het moment van testen stonden er geen audiofragmenten op de pagina (waardoor het onderdeel *Media* nog niet van toepassing was.
 
 </details>
 
