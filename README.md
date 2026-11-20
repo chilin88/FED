@@ -62,7 +62,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 ## Week 1 — Website kiezen, toegankelijkheidstest & breakdownschets
 
 <details>
-  <summary>uitwerken voor week 1</summary>
+  <summary>Proces update week 1</summary>
 
   ### Wat ik heb gedaan
 - Ik heb gekozen voor Headspace (in plaats van Ticketmaster), omdat een website die ik er leuk uit vond zien me meer zou motiveren om ermee aan de slag te gaan.
@@ -145,7 +145,7 @@ Wel kwamen er een paar kleine aandachtspunten naar voren:
 ## Week 2 — Voortgangsgesprek, verder breakdownschets & begin HTML
 
 <details>
-  <summary>uitwerken voor week 2</summary>
+  <summary>Proces update week 2</summary>
 
   ### Wat ik heb gedaan
 - Ik heb het voortgangsgesprek gehad en feedback gekregen op mijn breakdownschets: over het algemeen zat het goed, maar een aantal onderdelen mochten meer in detail en ik kreeg tips over welke HTML-elementen ik beter wel of niet kon gebruiken.
@@ -166,7 +166,7 @@ Mijn perfectionisme speelde hier meteen mee: omdat ik wist dat HTML de basis is 
 
 
 <details>
-  <summary>uitwerken voor week 3</summary>
+  <summary>Proces update week 3</summary>
 
   ### Wat ik heb gedaan
 - In week 3 ben ik verder gegaan met het schrijven en uitbreiden van mijn vanilla HTML voor de pagina's.
@@ -186,7 +186,7 @@ De drempel voor dit vak zat bij mij best hoog, mede omdat ik het eerder meerdere
 
 
 <details>
-  <summary>uitwerken voor week 4</summary>
+  <summary>Proces update week 4</summary>
 
   ### Wat ik heb gedaan
 - Ik heb mijn HTML verder afgerond en ben begonnen met CSS.
@@ -205,7 +205,7 @@ Ik dacht dat ik lang over HTML had gedaan, maar met CSS kwam er nog meer frustra
 
 
 <details>
-  <summary>uitwerken voor week 5</summary>
+  <summary>Proces update week 5</summary>
 
   ### Wat ik heb gedaan
 - In week 5 heb ik intensief aan de CSS gewerkt en veel geworsteld met positionering.
@@ -222,7 +222,7 @@ Dit was een zware en soms echt frustrerende week: het gevoel dat ik niet codeer-
 ## Week 6 — CSS & JavaScript (en bijlessen met mijn neef)
 
 <details>
-  <summary>uitwerken voor week 6</summary>
+  <summary>Proces update week 6</summary>
 
   ### Wat ik heb gedaan
 - In week 6 ben ik naast CSS ook met JS aan de slag gegaan, wat grotendeels nieuw voor mij was.
@@ -243,7 +243,7 @@ Omdat ik mijn eerste deadline niet had gehaald en dit mijn laatste kans is met h
 ## Week 7 — CSS & JS, code opschonen, toegankelijkheid checken in code, toegankelijkheidstest 2/2
 
 <details open>
-<summary>uitwerken voor week 7</summary>
+<summary>Proces update week 7</summary>
 
 ### Wat ik heb gedaan
 - **CSS & JS afronden:** Nog de laatste CSS- en JS-aanpassingen gedaan en gecontroleerd of alles werkt zoals bedoeld.
@@ -283,7 +283,7 @@ Ik merk dat ik er alles op zet om deze herkansing te halen ook al kostte me dit 
 ## Bronnenlijst
 
 <details open>
-  <summary>continu bijhouden terwijl je werkt</summary>
+  <summary>Bronnen</summary>
 
   ## Bronnen
 
