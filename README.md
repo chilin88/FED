@@ -121,13 +121,9 @@ Wel kwamen er een paar kleine aandachtspunten naar voren:
 - **Appearance (Dark mode):** Ondersteuning voor *dark mode* en *high-contrast mode* niet aanwezig.
 - **Overig:** Op het moment van testen stonden er geen audiofragmenten op de pagina (waardoor het onderdeel *Media* nog niet van toepassing was.
 
-</details>
 
+### Breakdownschetsen
 
-
-## Breakdownschets (week 1)
-
-<details>
   <summary>uitwerken na afloop 3<sup>e</sup> werkgroep</summary>
 
   ### Hoofdpagina: 
