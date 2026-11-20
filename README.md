@@ -48,7 +48,7 @@
 </details>
 
 
-## Week 1 — Website kiezen, toegankelijkheidstest & breakdownschets
+## Week 1 - Website kiezen, toegankelijkheidstest & breakdownschets
 
 <details>
   <summary>Proces update week 1</summary>
