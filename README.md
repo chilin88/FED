@@ -116,7 +116,7 @@ Ik begon deze nieuwe poging met goede moed omdat Headspace er aantrekkelijk uitz
 </details>
 
 
-## Week 2 — Voortgangsgesprek, verder breakdownschets & begin HTML
+## Week 2 - Voortgangsgesprek, verder breakdownschets & begin HTML
 
 <details>
   <summary>Proces update week 2</summary>
@@ -132,7 +132,7 @@ Mijn perfectionisme speelde hier meteen mee: omdat ik wist dat HTML de basis is 
 </details>
 
 
-## Week 3 — Verder HTML
+## Week 3 - Verder HTML
 
 <details>
   <summary>Proces update week 3</summary>
@@ -163,7 +163,7 @@ Ik dacht dat ik lang over HTML had gedaan, maar met CSS kwam er nog meer frustra
 </details>
 
 
-## Week 5 — CSS
+## Week 5 - CSS
 
 <details>
   <summary>Proces update week 5</summary>
@@ -179,7 +179,7 @@ Dit was een zware en soms echt frustrerende week: het gevoel dat ik niet codeer-
 </details>
 
 
-## Week 6 — CSS & JavaScript (en bijlessen met mijn neef)
+## Week 6 - CSS & JavaScript (en bijlessen met mijn neef)
 
 <details>
   <summary>Proces update week 6</summary>
@@ -192,7 +192,7 @@ Dit was een zware en soms echt frustrerende week: het gevoel dat ik niet codeer-
 </details>
 
 
-## Week 7 — CSS & JS, code opschonen, toegankelijkheid checken in code, toegankelijkheidstest 2/2
+## Week 7 - CSS & JS, code opschonen, toegankelijkheid checken in code, toegankelijkheidstest 2/2
 
 <details open>
 <summary>Proces update week 7</summary>
@@ -245,8 +245,6 @@ Ik merk dat ik er alles op zet om deze herkansing te halen ook al kostte me dit 
 
 <details open>
   <summary>Bronnen</summary>
-
-  ## Bronnen
 
 ### Assets & Referentie
 * **Functionele & visuele referentie, afbeeldingen, SVG's, audio en `Headspace Apercu`-lettertypen:** [Headspace](https://www.headspace.com/)
