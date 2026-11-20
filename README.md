@@ -3,16 +3,20 @@
 ## Jij
 
 <details open>
-  <summary>uitwerken voor kick-off werkgroep</summary>
+  <summary>Metadata</summary>
 
-  ### Auteur:
-  Lauren Cheung
+  ### Metadata:
+  Naam: Lauren Cheung
+  Studentnummer: 500836027
+  Datum:20/11/2026
+  Vak: Inhaal Frontend
+  Docent: Danny de Vries
 
-  #### Je startniveau:
+  #### Mijn startniveau:
   Blauw
 
-  #### Je focus:
-  Responsive
+  #### Mijn focus:
+  Responsiveness
 
   ### Achtergrond & proces:
   Ik heb dit vak in eerdere jaren vaker geprobeerd maar niet afgemaakt omdat coderen voor mij erg lastig en vaak
