@@ -59,12 +59,6 @@
 - Ik ben begonnen met de **breakdownschets** om te zien hoe de pagina's en verschillende onderdelen opgebouwd zijn. Al snel werd duidelijk dat Headspace behoorlijk wat secties en interactieve elementen heeft, wat het qua uitwerking best uitdagend maakt.
 
 
-  ### Breakdownschets hoofdpagina: 
-  <img src="readme-images/breakdownschets_main.jpg" width="375px" alt="breakdown van de hoofdpagina">
-
-  ### Breakdownschets slaappagina: 
-  <img src="readme-images/breakdownschets_sleep.jpg" width="375px" alt="breakdown van de slaappagina">
-
 ### Toegankelijkheidstest 1/2 (week 1)
 Om inzicht te krijgen in de digitale toegankelijkheid van de Headspace-website heb ik verschillende disability-simulatietests uitgevoerd. Hieronder staan de belangrijkste bevindingen per test:
 
