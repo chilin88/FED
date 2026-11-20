@@ -189,14 +189,6 @@ Dit was een zware en soms echt frustrerende week: het gevoel dat ik niet codeer-
 - Omdat ik tijdens de lessen niet altijd goed kon focussen, heb ik veel YouTube video's bekeken en uitleg/bijles gevraagd aan mijn neef (software engineering, in Londen). Videobellen en snel feedback vragen was door de afstand en drukte lastig, maar zijn uitleg hielp me om logica en concepten beter te snappen.
 - Ik heb soms express JS gebruikt ipv CSS, omdat ik bang was dat alles weer zou verschuiven.
 
-### Bijlesnotities met mijn neef (Londen — software engineering)
-- **Selectors & states:** Hoe je elementen gericht selecteert en met `disabled` of states aangeeft wanneer een knop wel of niet bruikbaar is.
-- **Scrollen & breedtes:** Hoe `scrollLeft`, `clientWidth` en `scrollWidth` werken om te bepalen waar je in een scrollbare lijst zit, en waarom een kleine marge helpt tegen afrondingsverschillen.
-- **Tickers / herhalende strips:** Hoe herhalende lijsten en animaties (`translateX`) zorgen voor een doorlopende beweging en waar je op moet letten bij spacing en `aria-hidden="true"`.
-
-### Mentale stand & update
-Omdat ik mijn eerste deadline niet had gehaald en dit mijn laatste kans is met het vernieuwde curriculum, voelde ik veel druk om het nu echt te halen. Tegelijk gaf de uitleg van mijn neef en het zien werken van onderdelen me weer wat meer houvast en motivatie om door te strijden.
-
 </details>
 
 
