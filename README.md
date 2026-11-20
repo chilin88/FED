@@ -223,8 +223,20 @@ De tweede toegankelijkheidstest heb ik zelf uitgevoerd nadat ik de volledige web
 - **Audio-transcripties:** Bij de audiofragmenten ontbreken uitgeschreven transcripties, omdat deze op de originele pagina ook niet aanwezig zijn.
 
 
+## Wat ik nog had willen verbeteren (bij meer tijd)
+
+Hoewel ik trots ben op het eindresultaat en de semantische opbouw van de website, zijn er een aantal punten die ik met meer tijd nog verder had willen verfijnen:
+
+* **Bestandsnamen van afbeeldingen opschonen:** Ik had alle afbeeldingen willen hernoemen naar een consistente, logische naamgeving in kleine letters (in plaats van originele bestandsnamen met hoofdletters of streepjes). Dat houdt de mapstructuur overzichtelijker en verkleint de kans op fouten bij het koppelen in de code.
+* **Alle carousels en navigatiepijltjes volledig werkend maken:** Ik heb ervoor gezorgd dat de belangrijkste carousels en interacties goed werken om te laten zien dat ik de techniek beheers, maar op sommige plekken (zoals bij enkele pijltjes en één carousel op de hoofdpagina) is de functionaliteit nog niet overal doorgevoerd of blijft een onderdeel haken. Met meer tijd had ik dit voor elke sectie op de site helemaal gladgestreken en consistent gemaakt.
+* **Grote audiobestanden optimaliseren:** Bij het uploaden naar GitHub bleken twee audiobestanden te groot voor de standaard uploadlimiet. Met meer tijd had ik deze bestanden gecomprimeerd (of ingekort tot kortere previews) zodat alle audio-fragmenten ook live op GitHub Pages afspeelbaar zijn.
+
+
+
 ### Mentale stand & update
 Ik merk dat ik er alles op zet om deze herkansing te halen ook al kostte me dit een paar mental breakdowns, want het zou zonde zijn als al deze tijd en moeite voor niets is geweest. Door mijn code op te schonen en van duidelijke comments te voorzien voelt het geheel nu veel rustiger en overzichtelijker dan aan het begin van het puzzelen.
+
+
 
 </details>
 
