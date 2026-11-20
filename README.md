@@ -38,11 +38,11 @@
 
 
   #### Screenshot van de eerste pagina (small screen): 
-  Hoofdpagina  
+  'Home' pagina  
   <img src="readme-images/headspace_main.png" width="375px" alt="hoofdpagina van de mobiele headspace website">
 
   #### Screenshot van de tweede pagina (small screen):
-  hier de naam van de pagina  
+  'Sleep' pagina
   <img src="readme-images/headspace_sleep.png" width="375px" alt="nieuwspagina van de mobiele headspace website">
  
 </details>
