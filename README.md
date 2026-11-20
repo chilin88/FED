@@ -138,7 +138,7 @@ Mijn perfectionisme speelde hier meteen mee: omdat ik wist dat HTML de basis is 
   <summary>Proces update week 3</summary>
 
   ### Wat ik heb gedaan
-- In week 3 ben ik verder gegaan met het schrijven en uitbreiden van mijn vanilla HTML voor de pagina's.
+- In week 3 ben ik verder gegaan met het schrijven en uitbreiden van mijn HTML voor de pagina's.
 - Ik heb geprobeerd de structuur helder en compleet neer te zetten, terwijl ik merkte dat ik nog steeds veel tijd kwijt was aan het netjes maken van de basis.
 - Ik heb niet aan alle voortgangsgesprekken deelgenomen wanneer ik nog weinig had om concrete feedback op te vragen en ben in plaats daarvan zelfstandig doorgegaan.
 
