@@ -34,14 +34,14 @@
   <summary>uitwerking voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  Gekozen website: https://www.headspace.com/ (eerder Ticketmaster overwogen vanwege voprige jaren, maar Headspace gekozen op advies om een website te kiezen die me enigszins leuk lijkt.
+  Gekozen website: https://www.headspace.com/ (eerder Ticketmaster opnieuw overwogen vanwege vorige jaren, maar Headspace gekozen op advies om een website te kiezen die me enigszins leuk lijkt.)
 
 
-  #### Screenshot(s) van de eerste pagina (small screen): 
+  #### Screenshot van de eerste pagina (small screen): 
   Hoofdpagina  
   <img src="readme-images/headspace_main.png" width="375px" alt="hoofdpagina van de mobiele headspace website">
 
-  #### Screenshot(s) van de tweede pagina (small screen):
+  #### Screenshot van de tweede pagina (small screen):
   hier de naam van de pagina  
   <img src="readme-images/headspace_sleep.png" width="375px" alt="nieuwspagina van de mobiele headspace website">
  
