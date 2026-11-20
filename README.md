@@ -6,11 +6,11 @@
   <summary>Metadata</summary>
 
   ### Metadata:
-  Naam: Lauren Cheung
-  Studentnummer: 500836027
-  Datum:20/11/2026
-  Vak: Inhaal Frontend
-  Docent: Danny de Vries
+  - Naam: Lauren Cheung
+  - Studentnummer: 500836027
+  - Datum:20/11/2026
+  - Vak: Inhaal Frontend
+  - Docent: Danny de Vries
 
   #### Mijn startniveau:
   Blauw
