@@ -285,12 +285,24 @@ Ik merk dat ik er alles op zet om deze herkansing te halen ook al kostte me dit 
 <details open>
   <summary>continu bijhouden terwijl je werkt</summary>
 
-  Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg). 
-  Nb. ChatGpT en andere AI horen er ook bij.
-  Nb. Vermeld de bronnen ook in je code.
+  ## Bronnen
 
-  1. bron 1
-  2. bron 2
-  3. ...
+### Assets & Referentie
+* **Functionele & visuele referentie, afbeeldingen, SVG's, audio en `Headspace Apercu`-lettertypen:** [Headspace](https://www.headspace.com/)
+
+### HTML, CSS & JavaScript Documentatie
+* **HTML-elementen naslag:** [MDN Web Docs – HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements)
+* **CSS-eigenschappen naslag:** [CSS-Tricks – CSS Almanac](https://css-tricks.com/almanac/)
+* **Flexbox-gids:** [CSS-Tricks – A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* **Toegankelijkheid & Validatie:** [W3C Markup Validation Service](https://validator.w3.org/) & [The A11Y Project Checklist](https://www.a11yproject.com/checklist/)
+
+### Tutorials & Video's
+* **HTML-opfrisser:** [YouTube – HTML Tutorial for Beginners](https://www.youtube.com/watch?v=qz0aGYrrlhU)
+* **CSS-kernprincipes:** [YouTube – CSS Tutorial](https://www.youtube.com/watch?v=JnTPd9G6hoY)
+* **JavaScript-opfrisser:** [YouTube – JavaScript Tutorial for Beginners](https://www.youtube.com/watch?v=W6NZfCO5SIk)
+
+### Overige ondersteuning
+* **Bijles & uitleg over JavaScript-concepten:** Neef (software engineer)
+* **Hulp bij logica/uitleg en commentaarstructuur:** [Google Gemini](https://gemini.google.com/app)
 
 </details>
