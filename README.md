@@ -92,9 +92,6 @@ Om inzicht te krijgen in de digitale toegankelijkheid van de Headspace-website h
      - **Irrelevante groeperingen:** De lezer benoemde meerdere keren algemene HTML-groepen/containers, wat voor ruis en verwarring zorgde.
      - **Terugkeren naar navigatie:** Vanaf de onderkant van de pagina weer omhoog navigeren kostte veel tijd en vereiste het doorlopen van tientallen tussenliggende elementen; er ontbrak een duidelijke back to top of semantisch skip-mechanisme.
 
-### Mentale stand & update
-Ik begon deze nieuwe poging met goede moed omdat Headspace er aantrekkelijk uitzag en ik een frisse start wilde maken. Tegelijk voelde ik bij het zien van alle onderdelen al wel dat het best een pittige kluif ging worden, zeker omdat coderen me niet vanzelf afgaat.
-
 ### WCAG checklist - Test 1 (uitgevoerd door klasgenoot Susan)
 
 <img src="readme-images/wcagcheck1.1.jpeg" width="375px" alt="WCAG checklist pagina 1/5">
@@ -110,7 +107,6 @@ Wel kwamen er een paar kleine aandachtspunten naar voren:
 - **Appearance (Dark mode):** Ondersteuning voor *dark mode* en *high-contrast mode* niet aanwezig.
 - **Overig:** Op het moment van testen stonden er geen audiofragmenten op de pagina (waardoor het onderdeel *Media* nog niet van toepassing was.
 
-
 ### Breakdownschetsen
 
   <summary>uitwerken na afloop 3<sup>e</sup> werkgroep</summary>
@@ -120,6 +116,10 @@ Wel kwamen er een paar kleine aandachtspunten naar voren:
 
   ### Slaappagina: 
   <img src="readme-images/breakdownschets_sleep.jpg" width="375px" alt="breakdown van de hele pagina">
+
+  ### Mentale stand & update
+Ik begon deze nieuwe poging met goede moed omdat Headspace er aantrekkelijk uitzag en ik een frisse start wilde maken. Tegelijk voelde ik bij het zien van alle onderdelen al wel dat het best een pittige kluif ging worden, zeker omdat coderen me niet vanzelf afgaat.
+
 
 </details>
 
