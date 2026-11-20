@@ -109,8 +109,6 @@ Wel kwamen er een paar kleine aandachtspunten naar voren:
 
 ### Breakdownschetsen
 
-  <summary>uitwerken na afloop 3<sup>e</sup> werkgroep</summary>
-
   ### Hoofdpagina: 
   <img src="readme-images/breakdownschets_main.jpg" width="375px" alt="breakdown van de hele pagina">
 
