@@ -31,7 +31,7 @@
 ## Je website
 
 <details open>
-  <summary>uitwerken voor kick-off werkgroep</summary>
+  <summary>uitwerking voor kick-off werkgroep</summary>
 
   ### Je opdracht:
   Gekozen website: https://www.headspace.com/ (eerder Ticketmaster overwogen vanwege voprige jaren, maar Headspace gekozen op advies om een website te kiezen die me enigszins leuk lijkt.
