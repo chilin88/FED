@@ -1,14 +1,4 @@
 # Procesverslag
-Markdown is een simpele manier om HTML te schrijven.  
-Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-
-Nb. De standaardstructuur en de spartaanse opmaak van de README.md zijn helemaal prima. Het gaat om de inhoud van je procesverslag. Besteedt de tijd voor pracht en praal aan je website.
-
-Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard open zetten. Fijn om dat steeds voor de relevante stuk(ken) te doen.
-
-
-
-
 
 ## Jij
 
@@ -30,12 +20,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   heel leuk, maar als ik vastloop en er niet uitkom slaat de frustratie en twijfel snel toe. Omdat het curriculum is
   gewijzigd en dit mijn laatste kans is om deze studiepunten te halen, wil en zal ik dit vak nu halen en heb ik er alles
   aan gedaan om de website af te ronden.
-
- 
+  
 </details>
-
-
-
 
 
 ## Je website
@@ -56,7 +42,6 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <img src="readme-images/headspace_sleep.png" width="375px" alt="nieuwspagina van de mobiele headspace website">
  
 </details>
-
 
 
 ## Week 1 — Website kiezen, toegankelijkheidstest & breakdownschets
@@ -135,9 +120,6 @@ Wel kwamen er een paar kleine aandachtspunten naar voren:
 </details>
 
 
-
-
-
 ## Week 2 — Voortgangsgesprek, verder breakdownschets & begin HTML
 
 <details>
@@ -151,15 +133,10 @@ Wel kwamen er een paar kleine aandachtspunten naar voren:
 ### Mentale stand & update
 Mijn perfectionisme speelde hier meteen mee: omdat ik wist dat HTML de basis is van de website, wilde ik het tot in de puntjes op orde hebben voordat ik verder ging. Daardoor kostte het veel tijd, liep ik al vroeg iets achter op het tempo van de lessen en kon ik klasoefeningen/popdrachten niet direct op mijn eigen site toepassen, wat ik jammer vond, al besefte ik dat ik daar zelf ook een rol in had door mijn trage start.
 
-
 </details>
 
 
-
-
-
 ## Week 3 — Verder HTML
-
 
 <details>
   <summary>Proces update week 3</summary>
@@ -175,11 +152,7 @@ De drempel voor dit vak zat bij mij best hoog, mede omdat ik het eerder meerdere
 </details>
 
 
-
-
-
 ## Week 4 - HTML afronden & begin CSS
-
 
 <details>
   <summary>Proces update week 4</summary>
@@ -194,11 +167,7 @@ Ik dacht dat ik lang over HTML had gedaan, maar met CSS kwam er nog meer frustra
 </details>
 
 
-
-
-
 ## Week 5 — CSS
-
 
 <details>
   <summary>Proces update week 5</summary>
@@ -212,7 +181,6 @@ Ik dacht dat ik lang over HTML had gedaan, maar met CSS kwam er nog meer frustra
 Dit was een zware en soms echt frustrerende week: het gevoel dat ik niet codeer-getalenteerd ben en dat alles verspringt kan dan flink aan me trekken. Het loslaten van die ene vastgelopen carrousel en het gebruik van Ctrl+Z hielp om niet helemaal te verzuipen en toch verder te komen.
 
 </details>
-
 
 
 ## Week 6 — CSS & JavaScript (en bijlessen met mijn neef)
@@ -270,10 +238,7 @@ De tweede toegankelijkheidstest heb ik zelf uitgevoerd nadat ik de volledige web
 ### Mentale stand & update
 Ik merk dat ik er alles op zet om deze herkansing te halen ook al kostte me dit een paar mental breakdowns, want het zou zonde zijn als al deze tijd en moeite voor niets is geweest. Door mijn code op te schonen en van duidelijke comments te voorzien voelt het geheel nu veel rustiger en overzichtelijker dan aan het begin van het puzzelen.
 
-
 </details>
-
-
 
 
 ## Bronnenlijst
