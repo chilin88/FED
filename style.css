@@ -32,7 +32,6 @@
 }
 
 :root {
-    /* Merk- & themakleuren */
     --color-primary-blue: #0061EF;
     --color-primary-blue-hover: #004ECC;
     --color-dark-blue: #0E1233;
@@ -41,7 +40,6 @@
     --color-pink: #FFA1CC;
     --color-green: #02873E;
 
-    /* Tekst & neutrale tinten */
     --color-text-dark: #2D2C2B;
     --color-text-muted: #4B4C4D;
     --color-footer-dark: #44423F;
@@ -63,29 +61,28 @@ body {
     line-height: 1.5;
 }
 
-h1, h2, h3, h4, p, figure, fieldset {
+:is(h1, h2, h3, h4, p, figure, fieldset) {
     margin: 0;
     padding: 0;
 }
 
-ul, ol {
+:is(ul, ol) {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
 img {
-    max-width: 100%;
     display: block;
+    max-width: 100%;
 }
 
 
 /* ==========================================================================
-   2. ANNOUNCEMENT BAR & BASIS HEADER (NAVIGATIE)
-   ========================================================================== */
+    2. ANNOUNCEMENT BAR & BASIS HEADER (NAVIGATIE)
+    ========================================================================== */
 .announcement-bar {
     background-color: var(--color-yellow);
-    text-align: center;
 }
 
 .announcement-bar a {
@@ -96,6 +93,7 @@ img {
     line-height: 1.625rem;
     letter-spacing: -0.01em;
     color: var(--color-text-dark);
+    text-align: center;
     text-decoration: underline;
     text-underline-offset: 0.2rem;
 }
@@ -103,20 +101,20 @@ img {
 .main-nav {
     position: sticky;
     top: 0;
-    height: 4rem;
-    background-color: var(--color-white);
-    padding: 0 1.5rem;
     z-index: 9;
+    height: 4rem;
+    padding: 0 1.5rem;
+    background-color: var(--color-white);
 }
 
 .main-nav > ul:first-of-type {
     display: flex;
     align-items: center;
-    height: 100%;
     gap: 1.25rem;
 }
 
-.main-nav > ul:not(:first-of-type) {
+.main-nav > ul:not(:first-of-type),
+.nav-desktop-links {
     display: none;
 }
 
@@ -128,26 +126,22 @@ img {
     height: 2rem;
 }
 
-.nav-cta a,
-.nav-toggle button {
+.nav-cta a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-}
-
-.nav-cta a {
     height: 2rem;
     padding: 0 1.5rem;
+    border-radius: 2rem;
     background-color: var(--color-primary-blue);
+    box-shadow: 0 0.125rem 0 rgba(65, 61, 69, 0.2);
     color: var(--color-white);
     font-size: 0.875rem;
     font-weight: 700;
     text-decoration: none;
-    border-radius: 2rem;
-    box-shadow: 0 0.125rem 0 rgba(65, 61, 69, 0.2);
 }
 
-.nav-cta a:hover {
+.nav-cta a:is(:hover, :focus-visible) {
     background-color: var(--color-primary-blue-hover);
 }
 
@@ -156,9 +150,9 @@ img {
 }
 
 .nav-toggle button {
-    background: none;
-    border: none;
     padding: 0.25rem;
+    border: none;
+    background: none;
     cursor: pointer;
 }
 
@@ -167,38 +161,36 @@ img {
     height: 1.5rem;
 }
 
-
 /* ==========================================================================
     3. MOBIEL MENU & DIALOG OVERLAYS
     ========================================================================== */
 .mobile-menu-overlay {
     position: fixed;
-    inset: 0 0 0 auto;
-    margin: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
     width: 100vw;
-    max-width: 100vw;
-    height: 100dvh;
-    max-height: 100dvh;
-    background-color: var(--color-white);
-    border: none;
+    min-height: 100dvh;
+    margin: 0;
     padding: 1rem;
-    overflow-y: auto;
+    border: none;
+    background-color: var(--color-white);
     box-shadow: -7px 0 20px rgba(20, 19, 19, 0.1);
-    display: none;
-    flex-direction: column;
     text-align: left;
+    overflow-y: auto;
 }
 
 .mobile-menu-overlay[open] {
     display: flex;
+    flex-direction: column;
 }
 
-.menu-close-btn,
-.submenu-back-btn,
-.submenu-close-btn {
+:is(.menu-close-btn, .submenu-back-btn, .submenu-close-btn) {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     width: 2.5rem;
     height: 2.5rem;
     padding: 0;
@@ -207,7 +199,6 @@ img {
     background-color: var(--color-bg-light);
     color: var(--color-text-dark);
     cursor: pointer;
-    flex-shrink: 0;
 }
 
 .mobile-menu-overlay .menu-close-btn {
@@ -216,32 +207,11 @@ img {
     margin: 0 0 1.5rem auto;
 }
 
-.menu-close-btn svg,
-.submenu-back-btn svg,
-.submenu-close-btn svg {
+:is(.menu-close-btn, .submenu-back-btn, .submenu-close-btn) svg {
     width: 1.125rem;
     height: 1.125rem;
-    stroke: var(--color-text-dark);
+    stroke: currentColor;
     stroke-width: 2.5;
-}
-
-.mobile-menu-items,
-.mobile-menu-items > li,
-.menu-secondary-links,
-.menu-secondary-links li,
-.submenu-items,
-.submenu-items > li,
-.submenu-items details ul,
-.submenu-items details ul li {
-    width: 100%;
-}
-
-.mobile-menu-items,
-.menu-secondary-links,
-.submenu-items,
-.submenu-items details ul {
-    display: flex;
-    flex-direction: column;
 }
 
 .mobile-menu-items {
@@ -249,34 +219,33 @@ img {
 }
 
 .mobile-menu-items > li:last-child {
-    border-bottom: 1.5px solid var(--color-text-muted);
-    padding-bottom: 1rem;
     margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1.5px solid var(--color-text-muted);
 }
 
-.menu-row-btn,
-.menu-row-link {
+:is(.menu-row-btn, .menu-row-link) {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     padding: 0.5rem 0;
-    background: transparent;
     border: none;
-    cursor: pointer;
-    text-align: left;
-    text-decoration: none;
+    background: transparent;
+    color: var(--color-text-dark);
     font-family: inherit;
     font-size: 1.375rem;
     font-weight: 500;
-    color: var(--color-text-dark);
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .arrow-icon {
+    flex-shrink: 0;
     width: 1.25rem;
     height: 1.25rem;
     stroke: var(--color-text-muted);
-    flex-shrink: 0;
 }
 
 .mobile-menu-items li > section {
@@ -284,39 +253,96 @@ img {
 }
 
 .mobile-menu-items li.is-open > section {
-    display: flex;
-    flex-direction: column;
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--color-white);
-    padding: 1.5rem;
-    overflow-y: auto;
-    text-align: left;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background-color: var(--color-white);
+    overflow-y: auto;
 }
 
 .submenu-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     margin-bottom: 2rem;
 }
 
-.submenu-header h2,
-.submenu-title {
+:is(.submenu-header h2, .submenu-title) {
+    margin-inline: auto;
+    color: var(--color-text-dark);
     font-size: 1.375rem;
     font-weight: 700;
+}
+
+.submenu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+:is(.submenu-items > li > a, .submenu-items summary) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     color: var(--color-text-dark);
-    margin: 0 auto;
-    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.submenu-items summary::-webkit-details-marker {
+    display: none;
+}
+
+.submenu-items summary h3 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.submenu-items summary::after {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-right: 0.25rem;
+    border-right: 2.5px solid currentColor;
+    border-bottom: 2.5px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+}
+
+.submenu-items details[open] summary::after {
+    transform: rotate(-135deg);
+}
+
+.submenu-items details ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-top: 1.25rem;
+}
+
+.submenu-items details ul a {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.submenu-items details ul a:is(:hover, :focus-visible) {
+    text-decoration: underline;
 }
 
 .menu-secondary-links {
-    margin: 1.5rem 0 2.5rem;
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
+    margin: 1.5rem 0 2.5rem;
 }
 
 .menu-secondary-links a {
@@ -332,90 +358,29 @@ img {
 .menu-secondary-links img {
     width: 1.5rem;
     height: 1.5rem;
-    object-fit: contain;
-    flex-shrink: 0;
 }
 
-.submenu-items {
-    gap: 1.5rem;
-}
-
-.submenu-items > li > a,
-.submenu-items summary {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.submenu-panel footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
     width: 100%;
-    text-align: left;
-    color: var(--color-text-dark);
-    font-size: 1.25rem;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    user-select: none;
 }
 
-.submenu-items summary::-webkit-details-marker {
-    display: none;
-}
-
-.submenu-items summary h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--color-text-dark);
-}
-
-.submenu-items summary::after {
-    content: "";
-    width: 0.5rem;
-    height: 0.5rem;
-    border-right: 2.5px solid var(--color-text-dark);
-    border-bottom: 2.5px solid var(--color-text-dark);
-    transform: rotate(45deg);
-    margin-right: 0.25rem;
-}
-
-.submenu-items details[open] summary::after {
-    transform: rotate(-135deg);
-}
-
-.submenu-items details ul {
-    padding-top: 1.25rem;
-    gap: 1rem;
-}
-
-.submenu-items details ul a {
-    display: block;
-    width: 100%;
-    text-align: left;
-    color: var(--color-text-muted);
-    text-decoration: none;
-    font-size: 1.125rem;
-    font-weight: 500;
-}
-
-.submenu-items details ul a:hover {
-    text-decoration: underline;
-}
-
-.menu-cta-btn,
-.submenu-cta-btn {
+:is(.menu-cta-btn, .submenu-cta-btn) {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
     width: 100%;
     max-width: 20.4375rem;
     height: 4.375rem;
+    margin: auto auto 1.5rem;
+    border-radius: 50rem;
+    box-shadow: 0 0.125rem 0 rgba(65, 61, 69, 0.2);
     color: var(--color-white);
-    font-family: inherit;
     font-size: 1.25rem;
     font-weight: 700;
     text-decoration: none;
-    border-radius: 50rem;
-    box-shadow: 0 0.125rem 0 rgba(65, 61, 69, 0.2);
-    cursor: pointer;
-    margin: auto auto 1.5rem;
-    flex-shrink: 0;
     transition: background-color 150ms ease;
 }
 
@@ -427,52 +392,42 @@ img {
     background-color: var(--color-primary-blue);
 }
 
-.submenu-cta-btn:hover {
+.submenu-cta-btn:is(:hover, :focus-visible) {
     background-color: var(--color-primary-blue-hover);
 }
 
 @media (min-width: 26.9375em) {
     .mobile-menu-overlay {
         width: 23.438rem;
-        max-width: 23.438rem;
     }
 }
 
-
 /* ==========================================================================
-   4. HERO SECTIE & TICKER / CARDS
-   ========================================================================== */
+    4. HERO SECTIE & TICKER / CARDS
+    ========================================================================== */
 .hero-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    position: relative;
+    padding-top: 1.5em;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-dark);
     font-size: 2rem;
     font-weight: 700;
     line-height: 1.15;
-    color: var(--color-text-dark);
-    margin-bottom: 1.5rem;
-    position: relative;
-    padding-top: 1.5em; 
+    text-align: center;
     overflow: hidden;
 }
 
 .ticker-item {
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    height: 1.25em;    
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    inset-inline: 0;
+    font-style: normal;
+    line-height: 1.25;
     white-space: nowrap;
     opacity: 0;
     transform: translateY(100%);
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
     pointer-events: none;
-    font-style: normal;
 }
 
 .ticker-item.is-visible {
@@ -482,7 +437,6 @@ img {
 }
 
 .ticker-item.exit-up {
-    opacity: 0;
     transform: translateY(-100%);
 }
 
@@ -492,72 +446,68 @@ main.hero-cards {
     align-items: center;
     gap: 1.5rem;
     padding: 0 1.25rem;
-    width: 100%;
 }
 
 .hero-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    background-color: var(--color-card-grey);
-    border-radius: 1.5rem;
-    padding: 2.25rem 1.25rem 0;
-    overflow: hidden;
-    height: 28rem;
     width: 100%;
+    height: 28rem;
+    padding: 2.25rem 1.25rem 0;
+    border-radius: 1.5rem;
+    background-color: var(--color-card-grey);
+    font-family: "Headspace Apercu", sans-serif;
+    text-align: center;
+    overflow: hidden;
 }
 
 .hero-card > h2 {
-    font-family: "Headspace Apercu", sans-serif;
-    font-size: 1.4rem;
-    line-height: 1.2;
-    font-weight: 500;
-    text-align: center;
-    color: var(--color-text-dark);
-    padding: 0 0.5rem;
     max-width: 24rem;
+    padding: 0 0.5rem;
+    color: var(--color-text-dark);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.2;
 }
 
 .hero-card > a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
+    margin-block: 1rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 50rem;
     background-color: var(--color-text-dark);
     color: var(--color-white);
-    font-family: "Headspace Apercu", sans-serif;
     font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
-    padding: 0.7rem 1.4rem;
-    border-radius: 50rem;
-    margin: 1rem auto;
+}
+
+.hero-card > a:is(:hover, :focus-visible) {
+    opacity: 0.9;
 }
 
 .hero-card > img {
     width: 100%;
     max-width: 24rem;
     max-height: 17.5rem;
+    margin-top: auto;
     object-fit: contain;
     object-position: bottom center;
-    margin-top: auto;
 }
 
 @media (min-width: 48em) {
     .hero-title {
+        margin: 1.5rem 0 2.25rem;
         font-size: 3.25rem;
-        margin-top: 1.5rem;
-        margin-bottom: 2.25rem;
     }
 
     main.hero-cards {
         display: grid;
         grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-        gap: 1.5rem;
         max-width: 72rem;
-        margin: 0 auto;
+        margin-inline: auto;
         padding: 0 2rem 2rem;
-        align-items: stretch;
     }
 
     main.hero-cards > :not(.hero-card) {
@@ -582,71 +532,66 @@ main.hero-cards {
 
 
 /* ==========================================================================
-   5. NEED STATES & POP-UP MODALS
-   ========================================================================== */
+    5. NEED STATES & POP-UP MODALS
+    ========================================================================== */
 section.need-states {
-    width: 100%;
     padding-top: 2.5rem;
 }
 
 h2.need-states-title {
+    color: var(--color-text-dark);
     font-family: "Headspace Apercu", sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
-    line-height: 1.2em;
+    line-height: 1.2;
     letter-spacing: -0.03em;
-    color: var(--color-text-dark);
     text-align: center;
-    width: 100%;
 }
 
 ul.need-states-list {
-    width: 100%;
-    margin-top: 4rem;
     display: grid;
-    grid-template-columns: 1fr;
     gap: 0.75rem;
-}
-
-ul.need-states-list > li {
-    width: 100%;
+    margin-top: 4rem;
 }
 
 button.need-state-btn {
-    width: 100%;
-    height: 4.75rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--color-white);
+    width: 100%;
+    height: 4.75rem;
+    padding: 0 1rem 0 1.5rem;
     border: 2px solid var(--color-border-light);
     border-radius: 0.5rem;
-    padding: 0 1rem 0 1.5rem;
+    background-color: var(--color-white);
+    text-align: left;
     cursor: pointer;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
 }
 
-button.need-state-btn p.need-state-label {
+button.need-state-btn:is(:hover, :focus-visible) {
+    border-color: #BAB6B0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.need-state-label {
+    flex: 1;
+    color: var(--color-text-dark);
     font-family: "Headspace Apercu", sans-serif;
     font-size: 1.1rem;
-    font-weight: 400;
     line-height: 1.5;
-    color: var(--color-text-dark);
-    flex: 1;
 }
 
-button.need-state-btn svg:first-of-type,
-button.need-state-btn svg.need-state-icon {
-    width: 3.25rem;
-    height: 3.25rem;
-    margin-left: auto;
-    margin-right: 1.25rem;
+.need-state-icon {
     flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin: 0 1.25rem 0 auto;
+    overflow: hidden;
 }
 
-button.need-state-btn svg:last-of-type,
-button.need-state-btn svg.need-state-arrow {
+.need-state-arrow {
+    flex-shrink: 0;
     width: 1.15rem;
     height: 1.15rem;
     fill: none;
@@ -654,67 +599,25 @@ button.need-state-btn svg.need-state-arrow {
     stroke-width: 1.5px;
     stroke-linecap: round;
     stroke-linejoin: round;
-    flex-shrink: 0;
     transition: transform 0.2s ease;
 }
 
-button.need-state-btn:hover {
-    border-color: #BAB6B0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-button.need-state-btn:hover svg.need-state-arrow {
+button.need-state-btn:is(:hover, :focus-visible) .need-state-arrow {
     transform: translateX(0.25rem);
 }
 
-/* Need State Modals */
 dialog.need-state-modal {
     position: fixed;
     inset: 0;
-    margin: auto;
-    border: none;
-    border-radius: 1.5rem;
     width: calc(100% - 2rem);
     max-width: 24rem;
     max-height: 90dvh;
+    margin: auto;
     padding: 2.5rem 1.5rem 2rem;
+    border: none;
+    border-radius: 1.5rem;
     box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.25);
     overflow-y: auto;
-}
-
-dialog.need-state-modal > button,
-dialog.need-state-modal button[aria-label] {
-    position: absolute;
-    top: 1.15rem;
-    right: 1.15rem;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.85);
-    color: var(--color-text-dark);
-    font-size: 1.15rem;
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    padding: 0;
-    z-index: 2;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-dialog.need-state-modal > button:hover,
-dialog.need-state-modal button[aria-label]:hover {
-    background-color: var(--color-white);
-    transform: scale(1.05);
-}
-
-dialog.need-state-modal > button svg,
-dialog.need-state-modal button[aria-label] svg {
-    width: 1.1rem;
-    height: 1.1rem;
-    stroke: var(--color-text-dark);
 }
 
 dialog.need-state-modal::backdrop {
@@ -726,45 +629,73 @@ dialog.need-state-modal[open] {
     flex-direction: column;
 }
 
+dialog.need-state-modal button[aria-label] {
+    position: absolute;
+    top: 1.15rem;
+    right: 1.15rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: var(--color-text-dark);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+dialog.need-state-modal button[aria-label]:is(:hover, :focus-visible) {
+    background-color: var(--color-white);
+    transform: scale(1.05);
+}
+
+dialog.need-state-modal button[aria-label] svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    stroke: currentColor;
+}
+
 dialog.need-state-modal header {
-    text-align: center;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 dialog.need-state-modal header figure {
     margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
 }
 
 dialog.need-state-modal header figure img {
     width: 13.5rem;
     max-height: 9rem;
+    margin: 0 auto;
     object-fit: contain;
 }
 
 dialog.need-state-modal header h3 {
+    margin-bottom: 0.5rem;
+    color: var(--color-text-dark);
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: -0.03em;
-    color: var(--color-text-dark);
-    margin-bottom: 0.5rem;
 }
 
 dialog.need-state-modal header p {
-    font-size: 0.9375rem;
-    font-weight: 400;
-    line-height: 1.45;
     max-width: 30rem;
     margin: 0 auto;
     color: var(--color-text-dark);
+    font-size: 0.9375rem;
+    line-height: 1.45;
 }
 
 ul.modal-feature-list {
-    margin-bottom: 1.75rem;
     display: grid;
-    grid-template-columns: 1fr;
     gap: 1.125rem;
+    margin-bottom: 1.75rem;
 }
 
 ul.modal-feature-list > li {
@@ -775,31 +706,31 @@ ul.modal-feature-list > li {
 }
 
 ul.modal-feature-list > li img {
+    flex-shrink: 0;
     width: 2.25rem;
     height: 2.25rem;
-    flex-shrink: 0;
     border-radius: 50%;
 }
 
+ul.modal-feature-list article {
+    color: var(--color-text-dark);
+}
+
 ul.modal-feature-list article h4 {
+    margin-bottom: 0.2rem;
     font-size: 1rem;
     font-weight: 700;
-    margin-bottom: 0.2rem;
-    color: var(--color-text-dark);
 }
 
 ul.modal-feature-list article p {
     font-size: 0.875rem;
     line-height: 1.4;
     opacity: 0.9;
-    color: var(--color-text-dark);
 }
 
 dialog.need-state-modal footer {
     display: flex;
     justify-content: center;
-    width: 100%;
-    background: transparent;
 }
 
 dialog.need-state-modal a.modal-cta {
@@ -808,32 +739,26 @@ dialog.need-state-modal a.modal-cta {
     justify-content: center;
     width: 100%;
     height: 3.5rem;
+    border-radius: 2rem;
     background-color: var(--color-white);
     color: var(--color-text-dark);
-    font-family: inherit;
     font-size: 1rem;
     font-weight: 700;
     text-decoration: none;
-    border-radius: 2rem;
     transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
-dialog.need-state-modal a.modal-cta:hover {
+dialog.need-state-modal a.modal-cta:is(:hover, :focus-visible) {
     background-color: var(--color-bg-light);
 }
 
-/* Modal Thema Kleuren */
-dialog.theme-stress, dialog.theme-stress footer { background-color: var(--color-yellow); }
-dialog.theme-sleep, dialog.theme-sleep footer { background-color: var(--color-purple); }
-dialog.theme-anxiety, dialog.theme-anxiety footer { background-color: var(--color-primary-blue); }
-dialog.theme-thoughts, dialog.theme-thoughts footer { background-color: var(--color-pink); }
-dialog.theme-meditation, dialog.theme-meditation footer { background-color: var(--color-green); }
-dialog.theme-therapy, dialog.theme-therapy footer { background-color: var(--color-primary-blue); }
+dialog.theme-stress     { background-color: var(--color-yellow); }
+dialog.theme-sleep      { background-color: var(--color-purple); }
+dialog.theme-thoughts   { background-color: var(--color-pink); }
+dialog.theme-meditation { background-color: var(--color-green); }
+:is(dialog.theme-anxiety, dialog.theme-therapy) { background-color: var(--color-primary-blue); }
 
-dialog.theme-sleep header h3, dialog.theme-sleep header p, dialog.theme-sleep article h4, dialog.theme-sleep article p,
-dialog.theme-anxiety header h3, dialog.theme-anxiety header p, dialog.theme-anxiety article h4, dialog.theme-anxiety article p,
-dialog.theme-meditation header h3, dialog.theme-meditation header p, dialog.theme-meditation article h4, dialog.theme-meditation article p,
-dialog.theme-therapy header h3, dialog.theme-therapy header p, dialog.theme-therapy article h4, dialog.theme-therapy article p {
+:is(dialog.theme-sleep, dialog.theme-anxiety, dialog.theme-meditation, dialog.theme-therapy) :is(header h3, header p, article h4, article p) {
     color: var(--color-white);
 }
 
@@ -842,165 +767,161 @@ dialog.theme-therapy header h3, dialog.theme-therapy header p, dialog.theme-ther
    6. DEEPER DIVE SECTION & AUDIO PLAYER
    ========================================================================== */
 section.deeper-dive-section {
-    width: 100vw;
-    max-width: 100vw;
     margin-inline: calc(50% - 50vw);
-    overflow: hidden;
 }
 
 section.deeper-dive-section > h2 {
-    text-align: center;
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--color-text-dark);
     max-width: 24rem;
     margin: 0 auto 1.5rem;
     padding: 0 1.25rem;
+    color: var(--color-text-dark);
+    font-size: 1.75rem;
+    font-weight: 700;
     line-height: 1.2;
+    text-align: center;
 }
 
-nav.deeper-dive-tabs,
-nav.library-tabs {
+:is(nav.deeper-dive-tabs, nav.library-tabs) {
     display: flex;
     align-items: center;
     gap: 0.625rem;
-    overflow-x: auto;
     padding: 0.25rem 1.25rem 1.5rem;
+    overflow-x: auto;
+}
+
+:is(nav.deeper-dive-tabs, nav.library-tabs, ul.deeper-dive-slides) {
     scrollbar-width: none;
 }
 
-nav.deeper-dive-tabs::-webkit-scrollbar,
-nav.library-tabs::-webkit-scrollbar {
+:is(nav.deeper-dive-tabs, nav.library-tabs, ul.deeper-dive-slides)::-webkit-scrollbar {
     display: none;
 }
 
-nav.deeper-dive-tabs .tab-button,
-nav.library-tabs button.tab-button {
+.tab-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     flex-shrink: 0;
     padding: 0.625rem 1.125rem;
-    border-radius: 50rem;
     border: 1px solid var(--color-border-light);
+    border-radius: 50rem;
     background-color: var(--color-white);
     color: var(--color-text-dark);
     font-family: inherit;
     font-size: 0.9375rem;
     font-weight: 600;
-    cursor: pointer;
     white-space: nowrap;
+    cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-nav.deeper-dive-tabs .tab-button.is-active,
-nav.library-tabs button.tab-button.is-active {
-    background-color: var(--color-text-dark);
+.tab-button:is(:hover, :focus-visible) {
+    border-color: var(--color-text-muted);
+}
+
+.tab-button.is-active {
     border-color: var(--color-text-dark);
+    background-color: var(--color-text-dark);
     color: var(--color-white);
 }
 
-nav.deeper-dive-tabs button.tab-button.is-active::before {
+nav.deeper-dive-tabs .tab-button.is-active::before {
     content: "";
-    display: inline-block;
     width: 0.5rem;
     height: 0.5rem;
-    margin-right: 0.4rem;
-    background-color: var(--color-white);
     border-radius: 50%;
+    background-color: var(--color-white);
 }
 
-nav.library-tabs button.tab-button img {
+.tab-button img {
     width: 1rem;
     height: 1rem;
     object-fit: contain;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 0.4rem;
 }
 
-nav.library-tabs button.tab-button.is-active img {
+.tab-button.is-active img {
     filter: brightness(0) invert(1);
 }
 
 ul.deeper-dive-slides {
     display: flex;
     gap: 1rem;
+    padding: 0 1.25rem;
     overflow-x: auto;
     scroll-behavior: smooth;
-    padding: 0 1.25rem;
-    scrollbar-width: none;
-    justify-content: flex-start;
-}
-
-ul.deeper-dive-slides::-webkit-scrollbar {
-    display: none;
 }
 
 ul.deeper-dive-slides > li {
     flex: 0 0 84%;
     max-width: 24rem;
-    scroll-snap-align: center;
     padding: 0 1.25rem;
+    scroll-snap-align: center;
 }
 
 article.dive-slide {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-    border-radius: 1.5rem;
-    padding: 2rem 1.5rem 0;
     height: 32rem;
-    width: 100%;
+    padding: 2rem 1.5rem 0;
+    border-radius: 1.5rem;
+    text-align: center;
     overflow: hidden;
 }
 
 article.dive-slide h3 {
+    margin-bottom: 0.75rem;
     font-size: 1.625rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
     line-height: 1.2;
 }
 
 article.dive-slide > p {
+    max-width: 22rem;
+    margin-bottom: 1.25rem;
     font-size: 0.9375rem;
     line-height: 1.45;
-    margin-bottom: 1.25rem;
-    max-width: 22rem;
 }
 
 article.dive-slide a.dive-cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-white);
-    color: var(--color-text-dark);
-    font-weight: 700;
-    font-size: 0.9375rem;
-    text-decoration: none;
+    margin-bottom: 1.75rem;
     padding: 0.75rem 1.75rem;
     border-radius: 50rem;
-    margin-bottom: 1.75rem;
+    background-color: var(--color-white);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    color: var(--color-text-dark);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-decoration: none;
 }
 
-article.dive-slide > svg,
-article.dive-slide > img {
+article.dive-slide a.dive-cta:is(:hover, :focus-visible) {
+    background-color: var(--color-bg-light);
+}
+
+article.dive-slide > :is(svg, img) {
     width: 100%;
     max-width: 18rem;
     height: auto;
     margin-top: auto;
 }
 
-/* Audio Player Component */
 figure.audio-player {
     display: flex;
     align-items: center;
     gap: 0.875rem;
-    width: 100%;
-    padding: 0.75rem 0;
     margin-bottom: 1.5rem;
+    padding: 0.75rem 0;
 }
 
 button.audio-play-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
     width: 3rem;
     height: 3rem;
     padding: 0.625rem;
@@ -1008,9 +929,6 @@ button.audio-play-button {
     border-radius: 50%;
     background-color: var(--color-text-dark);
     color: var(--color-white);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     cursor: pointer;
 }
 
@@ -1030,379 +948,97 @@ section.audio-details {
 }
 
 .audio-title {
-    font-size: 0.8rem;
-    font-weight: 400;
-    margin-top: 0;
+    min-width: 0;
     margin-bottom: 0.375rem;
+    font-size: 0.8rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 100%;
 }
 
 p.audio-controls {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    width: 100%;
 }
 
 time.audio-time {
+    flex-shrink: 0;
     font-size: 0.7rem;
     opacity: 0.5;
-    flex-shrink: 0;
 }
 
 input.audio-scrubber {
-    -webkit-appearance: none;
-    appearance: none;
     flex-grow: 1;
     height: 0.2rem;
     border-radius: 50rem;
     background-color: rgba(255, 255, 255, 0.5);
     outline: none;
     cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 input.audio-scrubber::-webkit-slider-thumb {
-    -webkit-appearance: none;
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
     background-color: var(--color-text-dark);
+    appearance: none;
+    -webkit-appearance: none;
 }
 
-/* Kaart Kleurthema's */
-article.theme-ai { background-color: var(--color-yellow); color: var(--color-text-dark); }
+article.theme-ai          { background-color: var(--color-yellow); color: var(--color-text-dark); }
 article.theme-meditations { background-color: var(--color-pink); color: var(--color-text-dark); }
-article.theme-recourses { background-color: var(--color-purple); color: var(--color-white); }
-article.theme-programs { background-color: var(--color-green); color: var(--color-white); }
-article.theme-therapy { background-color: var(--color-primary-blue); color: var(--color-white); }
+article.theme-recourses   { background-color: var(--color-purple); color: var(--color-white); }
+article.theme-programs    { background-color: var(--color-green); color: var(--color-white); }
+article.theme-therapy     { background-color: var(--color-primary-blue); color: var(--color-white); }
 
-article.theme-recourses button.audio-play-button,
-article.theme-programs button.audio-play-button {
+:is(article.theme-recourses, article.theme-programs) button.audio-play-button {
     background-color: var(--color-white);
     color: var(--color-text-dark);
 }
 
-article.theme-recourses input.audio-scrubber::-webkit-slider-thumb,
-article.theme-programs input.audio-scrubber::-webkit-slider-thumb {
+:is(article.theme-recourses, article.theme-programs) input.audio-scrubber::-webkit-slider-thumb {
     background-color: var(--color-white);
 }
 
-/* Carrousel paginatie dots */
-section.deeper-dive-section > ol,
-section.deeper-dive-section > ul:not(.deeper-dive-slides) {
-    margin-top: 1.75rem;
+section.deeper-dive-section > :is(ol, ul:not(.deeper-dive-slides)) {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    margin-top: 1.75rem;
 }
 
-section.deeper-dive-section > ol button,
-section.deeper-dive-section > ul:not(.deeper-dive-slides) button {
+section.deeper-dive-section > :is(ol, ul:not(.deeper-dive-slides)) button {
     width: 0.5rem;
     height: 0.5rem;
     padding: 0;
     border: none;
     border-radius: 50%;
     background-color: var(--color-border-light);
-    cursor: pointer;
-    font-size: 0;
     color: transparent;
-    text-indent: -50rem;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-section.deeper-dive-section > ol button.is-active,
-section.deeper-dive-section > ol button[aria-current="true"],
-section.deeper-dive-section > ul:not(.deeper-dive-slides) button.is-active,
-section.deeper-dive-section > ul:not(.deeper-dive-slides) button[aria-current="true"] {
-    background-color: var(--color-text-dark);
-}
-
-
-/* ==========================================================================
-   7. EXPLORE OUR LIBRARY (KAARTEN GRID & CARROUSEL)
-   ========================================================================== */
-main.hero-cards > section:has(> nav.library-tabs) {
-    width: 100%;
-    max-width: 72rem;
-    margin: 0 auto;
-    padding: 3rem 1.25rem;
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    align-items: center;
-    row-gap: 1.5rem;
-    column-gap: 0.625rem;
-    overflow: hidden;
-}
-
-main.hero-cards > section:has(> nav.library-tabs) > h2 {
-    grid-column: 1 / -1;
-    text-align: center;
-    font-size: 1.875rem;
-    font-weight: 700;
-    color: var(--color-text-dark);
-}
-
-main.hero-cards > section:has(> nav.library-tabs) > nav.library-tabs {
-    grid-column: 1 / -1;
-    margin: 0 -1.25rem;
-    padding: 0 1.25rem;
-}
-
-main.hero-cards > section:has(> nav.library-tabs) > ul {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 0.875rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    margin: 0 -1.25rem 0.5rem;
-    padding: 0.25rem 1.25rem;
-    scrollbar-width: none;
-}
-
-main.hero-cards > section:has(> nav.library-tabs) > ul::-webkit-scrollbar {
-    display: none;
-}
-
-main.hero-cards > section:has(> nav.library-tabs) > ul > li {
-    flex: 0 0 43%;
-    scroll-snap-align: start;
-}
-
-main.hero-cards > section:has(> nav.library-tabs) > a {
-    grid-column: 1;
-    justify-self: start;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--color-text-dark);
-    text-decoration: underline;
-    text-underline-offset: 0.25rem;
-}
-
-main.hero-cards > section:has(> nav.library-tabs) > button {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    border: none;
-    background-color: var(--color-card-grey);
-    color: var(--color-text-dark);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 0;
     cursor: pointer;
-    margin-left: 0.625rem;
+    transition: background-color 0.2s ease;
 }
 
-main.hero-cards > section:has(> nav.library-tabs) > button:first-of-type {
-    grid-column: 2;
-}
-
-main.hero-cards > section:has(> nav.library-tabs) > button:last-of-type {
-    grid-column: 3;
-}
-
-main.hero-cards > aside + section article {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 3 / 4.3;
-    border-radius: 1rem;
-    overflow: hidden;
-    display: flex;
+section.deeper-dive-section > :is(ol, ul:not(.deeper-dive-slides)) button:is(.is-active, [aria-current="true"]) {
     background-color: var(--color-text-dark);
-    transition: transform 0.25s ease;
 }
 
-main.hero-cards > aside + section article:has(img[src*="Cocomelon"]) {
-    background-color: var(--color-purple);
-}
-
-main.hero-cards > aside + section article:hover {
-    transform: translateY(-0.125rem);
-}
-
-main.hero-cards > aside + section article > a {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 0.875rem 0.75rem 1.25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    text-align: center;
-    text-decoration: none;
-    color: var(--color-white);
-    z-index: 1;
-}
-
-main.hero-cards > aside + section article > a::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0) 75%);
-    z-index: -1;
-}
-
-main.hero-cards > aside + section article img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
-}
-
-main.hero-cards > aside + section article mark {
-    position: absolute;
-    top: 0.75rem;
-    left: 0.75rem;
-    background-color: var(--color-white);
-    color: var(--color-primary-blue);
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.35rem 0.65rem;
-    border-radius: 50rem;
-    z-index: 2;
-}
-
-main.hero-cards > aside + section article h3 {
-    font-size: 1.0625rem;
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--color-white);
-    margin-bottom: 0.4rem;
-}
-
-main.hero-cards > aside + section article p {
-    font-size: 0.75rem;
-    line-height: 1.35;
-    color: rgba(255, 255, 255, 0.92);
-}
 
 
 /* ==========================================================================
-   8. SOCIAL PROOF / STATS (BLAUWE WOLKENKAART)
-   ========================================================================== */
-main.hero-cards > aside + section + section {
-    position: relative;
-    width: calc(100% - 1.5rem);
-    margin: 1rem 0.75rem 2.5rem;
-    min-height: 36rem;
-    padding: 3.75rem 1.5rem 4.25rem;
-    border-radius: 1rem;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    color: var(--color-white);
-    background-color: #62A8E5;
-    z-index: 1;
-}
-
-main.hero-cards > aside + section + section > img:first-child {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-main.hero-cards > aside + section + section > p:first-of-type {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.625rem;
-    padding: 0.55rem 1.35rem;
-    margin-bottom: 2.75rem;
-    border: 1.5px solid rgba(255, 255, 255, 0.75);
-    border-radius: 50rem;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    background-color: rgba(255, 255, 255, 0.08);
-}
-
-main.hero-cards > aside + section + section > h2 {
-    font-size: 2.125rem;
-    font-weight: 700;
-    line-height: 1.15;
-    color: var(--color-white);
-    max-width: 18.5rem;
-    margin: 0 auto 2rem;
-}
-
-main.hero-cards > aside + section + section > a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 2.15rem;
-    margin: 0 auto 3.25rem;
-    border-radius: 50rem;
-    background-color: var(--color-text-dark);
-    color: var(--color-white);
-    font-size: 0.9375rem;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-main.hero-cards > aside + section + section > dl {
-    width: 100%;
-    max-width: 21.5rem;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 1rem;
-    justify-items: center;
-    align-items: center;
-}
-
-main.hero-cards > aside + section + section > dl > dd {
-    margin: 0 0 0.45rem;
-    font-size: 1.875rem;
-    font-weight: 700;
-    color: var(--color-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 2.1rem;
-}
-
-main.hero-cards > aside + section + section > dl > dt {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.95);
-}
-
-main.hero-cards > aside + section + section > dl > dd:nth-of-type(1) { grid-column: 1; grid-row: 1; }
-main.hero-cards > aside + section + section > dl > dt:nth-of-type(1) { grid-column: 1; grid-row: 2; margin-bottom: 1.75rem; }
-main.hero-cards > aside + section + section > dl > dd:nth-of-type(2) { grid-column: 2; grid-row: 1; }
-main.hero-cards > aside + section + section > dl > dt:nth-of-type(2) { grid-column: 2; grid-row: 2; margin-bottom: 1.75rem; }
-main.hero-cards > aside + section + section > dl > dd:nth-of-type(3) { grid-column: 1; grid-row: 3; }
-main.hero-cards > aside + section + section > dl > dt:nth-of-type(3) { grid-column: 1; grid-row: 4; }
-main.hero-cards > aside + section + section > dl > dd:nth-of-type(4) { grid-column: 2; grid-row: 3; }
-main.hero-cards > aside + section + section > dl > dt:nth-of-type(4) { grid-column: 2; grid-row: 4; }
-
-
-/* ==========================================================================
-   9. TESTIMONIALS & FAQ SECTIE
+   7. TESTIMONIALS & FAQ SECTIE
    ========================================================================== */
 section.testimonials {
-    width: 100%;
     overflow: hidden;
 }
 
 header.testimonials-hero {
     position: relative;
-    width: 100%;
     max-width: 26rem;
     margin: 3.5rem auto;
     padding: 4.5rem 1rem;
@@ -1410,40 +1046,39 @@ header.testimonials-hero {
 }
 
 header.testimonials-hero h2 {
+    position: relative;
+    z-index: 2;
+    max-width: 16rem;
+    margin: 0 auto;
+    color: var(--color-text-dark);
     font-size: 2.125rem;
     font-weight: 800;
     line-height: 1.15;
-    color: var(--color-text-dark);
-    max-width: 16rem;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
 }
 
 header.testimonials-hero > img {
     position: absolute;
-    pointer-events: none;
     z-index: 1;
+    pointer-events: none;
 }
 
-header.testimonials-hero > img[src*="blue"] { width: 4.5rem; left: 0.5rem; top: 1.25rem; }
-header.testimonials-hero > img[src*="purple"] { width: 4.25rem; right: 0.5rem; top: 1.75rem; }
-header.testimonials-hero > img[src*="orange"] { width: 4.25rem; left: 0.5rem; bottom: 0.75rem; }
-header.testimonials-hero > img[src*="pink"] { width: 3.5rem; right: 1rem; bottom: 1.25rem; }
+header.testimonials-hero > img[src*="blue"]   { top: 1.25rem; left: 0.5rem; width: 4.5rem; }
+header.testimonials-hero > img[src*="purple"] { top: 1.75rem; right: 0.5rem; width: 4.25rem; }
+header.testimonials-hero > img[src*="orange"] { bottom: 0.75rem; left: 0.5rem; width: 4.25rem; }
+header.testimonials-hero > img[src*="pink"]   { bottom: 1.25rem; right: 1rem; width: 3.5rem; }
 
-header.testimonials-hero > img[src*="Star_1"],
-header.testimonials-hero > img[src*="Star_2"] {
+header.testimonials-hero > img:is([src*="Star_1"], [src*="Star_2"]) {
     display: none;
 }
 
 ul.testimonials-slider {
-    padding: 0 1.25rem 1rem;
     display: flex;
     gap: 1rem;
+    padding: 0 1.25rem 1rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;
     scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
 ul.testimonials-slider::-webkit-scrollbar {
@@ -1461,11 +1096,7 @@ li.testimonial-card {
 }
 
 li.testimonial-card blockquote {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
     position: relative;
-    margin: 0;
 }
 
 li.testimonial-card blockquote::before {
@@ -1473,29 +1104,29 @@ li.testimonial-card blockquote::before {
     position: absolute;
     top: 0;
     left: -0.55rem;
+    color: var(--color-text-dark);
     font-size: 1.25rem;
     font-weight: 500;
-    color: var(--color-text-dark);
 }
 
 li.testimonial-card blockquote p {
+    color: var(--color-text-dark);
     font-size: 1.5rem;
     line-height: 1.3;
-    color: var(--color-text-dark);
 }
 
 li.testimonial-card blockquote p::after {
     content: "”";
-    font-size: 1.25rem;
-    color: var(--color-text-dark);
     margin-left: 0.15rem;
+    color: var(--color-text-dark);
+    font-size: 1.25rem;
 }
 
 p.testimonial-author {
+    margin-top: 4rem;
+    color: var(--color-footer-dark);
     font-size: 0.9rem;
     line-height: 1.5;
-    color: var(--color-footer-dark);
-    margin-top: 4rem;
 }
 
 nav.testimonials-controls {
@@ -1516,103 +1147,44 @@ nav.testimonials-controls button {
     background-color: var(--color-bg-light);
     color: var(--color-text-dark);
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.15s ease, opacity 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
-/* FAQ Sectie */
-main.hero-cards > aside + section + section + section {
-    width: 100%;
-    max-width: 48rem;
-    margin: 0 auto;
-    padding: 2.5rem 1.25rem 5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+nav.testimonials-controls button:is(:hover, :focus-visible) {
+    background-color: var(--color-border-light);
 }
 
-main.hero-cards > aside + section + section + section > h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--color-text-dark);
-    text-align: center;
-    margin: 0 auto 2rem;
-}
-
-main.hero-cards > aside + section + section + section > ul {
-    width: 100%;
-}
-
-main.hero-cards > aside + section + section + section > ul > li {
-    border-bottom: 1px solid var(--color-border-light);
-}
-
-main.hero-cards > aside + section + section + section details > summary {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.25rem;
-    padding: 1.5rem 0;
-    cursor: pointer;
-}
-
-main.hero-cards > aside + section + section + section details > summary::-webkit-details-marker {
-    display: none;
-}
-
-main.hero-cards > aside + section + section + section details > summary > h3 {
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--color-text-dark);
-    text-align: left;
-}
-
-main.hero-cards > aside + section + section + section details > summary svg {
-    width: 1.125rem;
-    height: 1.125rem;
-    color: var(--color-text-dark);
-    flex-shrink: 0;
-}
-
-main.hero-cards > aside + section + section + section details:not([open]) .minus-icon,
-main.hero-cards > aside + section + section + section details[open] .plus-icon {
-    display: none;
-}
-
-main.hero-cards > aside + section + section + section details > p {
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: var(--color-text-muted);
-    margin-bottom: 1.5rem;
-    padding-right: 1.5rem;
-    text-align: left;
-}
 
 
 /* ==========================================================================
-   10. HEADSPACE FOR ORGANIZATIONS & TICKER BANNER
+   8. HEADSPACE FOR ORGANIZATIONS & TICKER BANNER
    ========================================================================== */
-.logo-ticker {
-    width: 100%;
+:is(.logo-ticker, .yellow-ticker) {
     display: flex;
     align-items: center;
     overflow: hidden;
     user-select: none;
+}
+
+:is(.logo-ticker, .yellow-ticker) > ul {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    animation: ticker-scroll linear infinite;
+}
+
+:is(.logo-ticker, .yellow-ticker):hover > ul {
+    animation-play-state: paused;
+}
+
+.logo-ticker {
     margin-bottom: 2rem;
 }
 
 .logo-ticker > ul {
-    padding-right: 3rem;
-    display: flex;
-    align-items: center;
     gap: 3rem;
-    flex-shrink: 0;
-    animation: ticker-scroll 35s linear infinite;
-}
-
-.logo-ticker:hover > ul {
-    animation-play-state: paused;
+    padding-right: 3rem;
+    animation-duration: 35s;
 }
 
 .logo-ticker li {
@@ -1623,25 +1195,24 @@ main.hero-cards > aside + section + section + section details > p {
 
 .logo-ticker img {
     height: 1.75rem;
-    width: auto;
 }
 
-main.hero-cards > section:has(> img[src*="image_50"]) {
-    background-color: var(--color-primary-blue);
-    color: var(--color-white);
-    width: calc(100% - 1rem);
-    max-width: 72rem;
-    border-radius: 1.5rem;
-    margin: 2rem auto;
-    padding: 2.75rem 1.75rem 2.25rem;
+.org-banner {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: calc(100% - 1rem);
+    max-width: 72rem;
+    margin: 2rem auto;
+    padding: 2.75rem 1.75rem 2.25rem;
+    border-radius: 1.5rem;
+    background-color: var(--color-primary-blue);
+    color: var(--color-white);
     text-align: center;
     overflow: hidden;
 }
 
-main.hero-cards > section:has(> img[src*="image_50"]) > ul {
+.org-banner > ul {
     width: calc(100% + 3rem);
     margin: 0 -1.5rem 2.25rem;
     padding: 0 1.5rem;
@@ -1649,43 +1220,42 @@ main.hero-cards > section:has(> img[src*="image_50"]) > ul {
     scrollbar-width: none;
 }
 
-main.hero-cards > section:has(> img[src*="image_50"]) > ul::-webkit-scrollbar {
+.org-banner > ul::-webkit-scrollbar {
     display: none;
 }
 
-main.hero-cards > section:has(> img[src*="image_50"]) > ul > li {
+.org-banner > ul > li {
     display: flex;
     align-items: center;
     gap: 2.25rem;
     width: max-content;
 }
 
-main.hero-cards > section:has(> img[src*="image_50"]) > ul img {
+.org-banner > ul img {
     height: 2rem;
-    width: auto;
     object-fit: contain;
     filter: brightness(0) invert(1);
     opacity: 0.85;
 }
 
-main.hero-cards > section:has(> img[src*="image_50"]) > h2 {
+.org-banner > h2 {
+    max-width: 20rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-white);
     font-size: 1.875rem;
     font-weight: 500;
     line-height: 1.15;
-    color: var(--color-white);
-    max-width: 20rem;
-    margin-bottom: 1.5rem;
 }
 
-main.hero-cards > section:has(> img[src*="image_50"]) > p {
-    font-size: 0.9375rem;
-    line-height: 1.45;
-    color: rgba(255, 255, 255, 0.92);
+.org-banner > p {
     max-width: 17rem;
     margin-bottom: 1.75rem;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.9375rem;
+    line-height: 1.45;
 }
 
-main.hero-cards > section:has(> img[src*="image_50"]) > a {
+.org-banner > a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1697,160 +1267,470 @@ main.hero-cards > section:has(> img[src*="image_50"]) > a {
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-main.hero-cards > section:has(> img[src*="image_50"]) > a:first-of-type {
+.org-banner > a:is(:hover, :focus-visible) {
+    transform: translateY(-1px);
+}
+
+.org-banner > a:first-of-type {
+    margin-bottom: 0.875rem;
+    border: 2px solid var(--color-white);
     background-color: var(--color-white);
     color: var(--color-text-dark);
-    border: 2px solid var(--color-white);
-    margin-bottom: 0.875rem;
 }
 
-main.hero-cards > section:has(> img[src*="image_50"]) > a:last-of-type {
+.org-banner > a:last-of-type {
+    margin-bottom: 2.25rem;
+    border: 2px solid rgba(255, 255, 255, 0.75);
     background-color: transparent;
     color: var(--color-white);
-    border: 2px solid rgba(255, 255, 255, 0.75);
-    margin-bottom: 2.25rem;
 }
 
-main.hero-cards > section:has(> img[src*="image_50"]) > img {
+.org-banner > img {
     width: 100%;
     max-width: 22rem;
     margin: 0 auto;
 }
 
-/* Ticker Banner: find some headspace */
-main.hero-cards > aside {
-    background-color: var(--color-yellow);
-    color: var(--color-text-dark);
-    width: 100vw;
-    max-width: 100vw;
+.yellow-ticker {
     margin: 1.5rem calc(50% - 50vw) 2.5rem;
     padding: 1.05rem 0;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    user-select: none;
+    background-color: var(--color-yellow);
+    color: var(--color-text-dark);
 }
 
-main.hero-cards > aside > ul {
-    padding-right: 2rem;
-    display: flex;
-    align-items: center;
+.yellow-ticker > ul {
     gap: 2rem;
-    flex-shrink: 0;
-    animation: ticker-scroll 80s linear infinite;
+    padding-right: 2rem;
+    animation-duration: 80s;
 }
 
-main.hero-cards > aside:hover > ul {
-    animation-play-state: paused;
-}
-
-main.hero-cards > aside li {
+.yellow-ticker li {
     display: inline-flex;
     align-items: center;
     gap: 1.25rem;
+    color: var(--color-text-dark);
     font-size: 1.05rem;
     font-weight: 500;
     white-space: nowrap;
-    color: var(--color-text-dark);
 }
 
-main.hero-cards > aside li svg {
-    width: 3rem;
-    height: 1.4rem;
+.yellow-ticker li svg {
     flex-shrink: 0;
+    width: auto;
+    height: 2.25rem;
 }
 
 @keyframes ticker-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
+    from { transform: translateX(0); }
+    to   { transform: translateX(-100%); }
+}
+
+
+
+/* ==========================================================================
+   9. EXPLORE OUR LIBRARY (KAARTEN GRID & CARROUSEL)
+   ========================================================================== */
+main.hero-cards > section:has(> nav.library-tabs) {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    row-gap: 1.5rem;
+    column-gap: 0.625rem;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 3rem 1.25rem;
+    overflow: hidden;
+}
+
+main.hero-cards > section:has(> nav.library-tabs) > h2 {
+    grid-column: 1 / -1;
+    color: var(--color-text-dark);
+    font-size: 1.875rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+main.hero-cards > section:has(> nav.library-tabs) > nav.library-tabs {
+    grid-column: 1 / -1;
+    margin: 0 -1.25rem;
+    padding: 0 1.25rem;
+}
+
+main.hero-cards > section:has(> nav.library-tabs) > ul {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 0.875rem;
+    margin: 0 -1.25rem 0.5rem;
+    padding: 0.25rem 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+main.hero-cards > section:has(> nav.library-tabs) > ul::-webkit-scrollbar {
+    display: none;
+}
+
+main.hero-cards > section:has(> nav.library-tabs) > ul > li {
+    flex: 0 0 43%;
+    scroll-snap-align: start;
+}
+
+main.hero-cards > section:has(> nav.library-tabs) > a {
+    grid-column: 1;
+    justify-self: start;
+    color: var(--color-text-dark);
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+}
+
+main.hero-cards > section:has(> nav.library-tabs) > button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-card-grey);
+    color: var(--color-text-dark);
+    cursor: pointer;
+}
+
+main.hero-cards > section:has(> nav.library-tabs) > button:first-of-type { grid-column: 2; }
+main.hero-cards > section:has(> nav.library-tabs) > button:last-of-type  { grid-column: 3; }
+
+main.hero-cards > aside + section article {
+    position: relative;
+    aspect-ratio: 3 / 4.3;
+    border-radius: 1rem;
+    background-color: var(--color-text-dark);
+    overflow: hidden;
+    transition: transform 0.25s ease;
+}
+
+main.hero-cards > aside + section article:has(img[src*="Cocomelon"]) {
+    background-color: var(--color-purple);
+}
+
+main.hero-cards > aside + section article:hover {
+    transform: translateY(-0.125rem);
+}
+
+main.hero-cards > aside + section article > a {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+    padding: 0.875rem 0.75rem 1.25rem;
+    color: var(--color-white);
+    text-align: center;
+    text-decoration: none;
+}
+
+main.hero-cards > aside + section article > a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0) 75%);
+}
+
+main.hero-cards > aside + section article img {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main.hero-cards > aside + section article mark {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 2;
+    padding: 0.35rem 0.65rem;
+    border-radius: 50rem;
+    background-color: var(--color-white);
+    color: var(--color-primary-blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+main.hero-cards > aside + section article h3 {
+    margin-bottom: 0.4rem;
+    font-size: 1.0625rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+main.hero-cards > aside + section article p {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.75rem;
+    line-height: 1.35;
 }
 
 
 /* ==========================================================================
-   11. PRE-FOOTER BANNER & FOOTER
+   10. SOCIAL PROOF / STATS (BLAUWE WOLKENKAART)
    ========================================================================== */
-.pre-footer-banner {
+main.hero-cards > aside + section + section {
     position: relative;
-    width: 100vw;
-    max-width: 100vw;
-    margin-inline: calc(50% - 50vw);
-    background-color: var(--color-yellow);
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 1.5rem);
+    min-height: 36rem;
+    margin: 1rem 0.75rem 2.5rem;
+    padding: 3.75rem 1.5rem 4.25rem;
+    border-radius: 1rem;
+    background-color: #62A8E5;
+    color: var(--color-white);
+    text-align: center;
+    overflow: hidden;
+}
+
+main.hero-cards > aside + section + section > img:first-child {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main.hero-cards > aside + section + section > p:first-of-type {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    margin-bottom: 2.75rem;
+    padding: 0.55rem 1.35rem;
+    border: 1.5px solid rgba(255, 255, 255, 0.75);
+    border-radius: 50rem;
+    background-color: rgba(255, 255, 255, 0.08);
+    font-size: 0.9375rem;
+    font-weight: 500;
+}
+
+main.hero-cards > aside + section + section > h2 {
+    max-width: 18.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-white);
+    font-size: 2.125rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+main.hero-cards > aside + section + section > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3.25rem;
+    padding: 1rem 2.15rem;
+    border-radius: 50rem;
+    background-color: var(--color-text-dark);
+    color: var(--color-white);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+main.hero-cards > aside + section + section > dl {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    max-width: 21.5rem;
+    margin: 0 auto;
+}
+
+main.hero-cards > aside + section + section > dl > dd {
+    margin: 0 0 0.45rem;
+    color: var(--color-white);
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+main.hero-cards > aside + section + section > dl > dt {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+main.hero-cards > aside + section + section > dl > :is(dd:nth-of-type(1), dt:nth-of-type(1), dd:nth-of-type(3), dt:nth-of-type(3)) { grid-column: 1; }
+main.hero-cards > aside + section + section > dl > :is(dd:nth-of-type(2), dt:nth-of-type(2), dd:nth-of-type(4), dt:nth-of-type(4)) { grid-column: 2; }
+main.hero-cards > aside + section + section > dl > :is(dd:nth-of-type(1), dd:nth-of-type(2)) { grid-row: 1; }
+main.hero-cards > aside + section + section > dl > :is(dt:nth-of-type(1), dt:nth-of-type(2)) { grid-row: 2; margin-bottom: 1.75rem; }
+main.hero-cards > aside + section + section > dl > :is(dd:nth-of-type(3), dd:nth-of-type(4)) { grid-row: 3; }
+main.hero-cards > aside + section + section > dl > :is(dt:nth-of-type(3), dt:nth-of-type(4)) { grid-row: 4; }
+
+/* ==========================================================================
+   11. FAQ
+   ========================================================================== */
+.faq-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+}
+
+.faq-section > h2 {
+    margin-bottom: 2rem;
+    color: var(--color-text-dark);
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.faq-section > ul {
+    width: 100%;
+}
+
+.faq-section > ul > li {
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.faq-section details > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding: 1.5rem 0;
+    list-style: none;
+    cursor: pointer;
+}
+
+.faq-section details > summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-section details > summary > h3 {
+    color: var(--color-text-dark);
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-align: left;
+}
+
+.faq-section details > summary svg {
+    flex-shrink: 0;
+    width: 1.125rem;
+    height: 1.125rem;
+    color: var(--color-text-dark);
+}
+
+.faq-section details:not([open]) .minus-icon,
+.faq-section details[open] .plus-icon {
+    display: none;
+}
+
+.faq-section details > p {
+    margin-bottom: 1.5rem;
+    padding-right: 1.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* ==========================================================================
+   12. PRE-FOOTER BANNER & FOOTER
+   ========================================================================== */
+.pre-footer-banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: calc(50% - 50vw);
+    background-color: var(--color-yellow);
     overflow: hidden;
 }
 
 .pre-footer-banner > img:first-of-type {
     width: 100%;
-    background-color: var(--color-white);
     margin-bottom: -1px;
+    background-color: var(--color-white);
 }
 
 .pre-footer-banner > a {
+    z-index: 2;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 1.85rem 2.75rem;
     margin: 2.25rem auto 1.5rem;
+    padding: 1.85rem 2.75rem;
     border-radius: 50rem;
     background-color: var(--color-primary-blue);
+    box-shadow: 0 4px 12px rgba(0, 97, 239, 0.18);
     color: var(--color-white);
     font-size: 1.45rem;
     font-weight: 700;
     text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0, 97, 239, 0.18);
-    z-index: 2;
 }
 
 .pre-footer-banner > svg {
+    display: block;
     width: 155%;
     max-width: none;
     height: auto;
-    display: block;
     margin-bottom: -2px;
 }
 
-/* Site Footer Basis */
 .site-footer {
     position: relative;
     z-index: 2;
+    margin-top: -1.5rem;
+    margin-inline: calc(50% - 50vw);
     background-color: var(--color-card-grey);
     color: var(--color-text-dark);
-    width: 100vw;
-    max-width: 100vw;
-    margin-inline: calc(50% - 50vw);
-    margin-top: -1.5rem;
+}
+
+.site-footer > :is(section:first-of-type, section:nth-of-type(2), section:nth-of-type(3)) {
+    display: flex;
+    max-width: 48rem;
+    margin: 0 auto;
 }
 
 .site-footer > section:first-of-type {
-    width: 100%;
-    max-width: 48rem;
-    margin: 0 auto;
-    padding: 1.5rem 1.25rem 2.25rem;
-    border-bottom: 1px solid var(--color-border-light);
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding: 1.5rem 1.25rem 2.25rem;
+    border-bottom: 1px solid var(--color-border-light);
 }
 
 .site-footer > section:first-of-type > h2 {
+    margin-bottom: 0.75rem;
+    color: var(--color-text-dark);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--color-text-dark);
-    margin-bottom: 0.75rem;
 }
 
 .site-footer > section:first-of-type > p:first-of-type {
-    font-size: 1rem;
-    color: var(--color-text-dark);
     margin-bottom: 1rem;
+    color: var(--color-text-dark);
+    font-size: 1rem;
 }
 
 .site-footer > section:first-of-type > p:last-of-type {
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
     margin-bottom: 1.25rem;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
 }
 
 .site-footer > section:first-of-type > p:last-of-type a {
@@ -1859,10 +1739,10 @@ main.hero-cards > aside li svg {
 }
 
 .site-footer > section:first-of-type > form {
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.875rem;
+    width: 100%;
 }
 
 .site-footer > section:first-of-type input[type="email"] {
@@ -1872,9 +1752,9 @@ main.hero-cards > aside li svg {
     border: 1px solid var(--color-border-light);
     border-radius: 0.5rem;
     background-color: var(--color-white);
+    color: var(--color-text-dark);
     font-family: inherit;
     font-size: 0.9375rem;
-    color: var(--color-text-dark);
     outline: none;
 }
 
@@ -1891,38 +1771,33 @@ main.hero-cards > aside li svg {
     cursor: pointer;
 }
 
-/* Footer Section 2 (My Headspace & Accordeons) */
 .site-footer > section:nth-of-type(2) {
-    width: 100%;
-    max-width: 48rem;
-    margin: 0 auto;
-    padding: 2rem 1.25rem 1.5rem;
-    display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    padding: 2rem 1.25rem 1.5rem;
 }
 
 .site-footer > section:nth-of-type(2) > h2 {
+    margin-bottom: 1.25rem;
+    color: var(--color-footer-dark);
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--color-footer-dark);
-    margin-bottom: 1.25rem;
 }
 
 .site-footer > section:nth-of-type(2) > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     max-width: 14rem;
     height: 3.125rem;
-    margin: 0 auto 1.5rem;
+    margin: 0 0 1.5rem;
     border-radius: 50rem;
     background-color: var(--color-primary-blue);
     color: var(--color-white);
     font-size: 0.9375rem;
     font-weight: 700;
     text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .site-footer > section:nth-of-type(2) > ul {
@@ -1930,13 +1805,12 @@ main.hero-cards > aside li svg {
 }
 
 .site-footer > section:nth-of-type(2) details > summary {
-    list-style: none;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
     gap: 1rem;
     padding: 1rem 0;
+    list-style: none;
     cursor: pointer;
 }
 
@@ -1945,9 +1819,9 @@ main.hero-cards > aside li svg {
 }
 
 .site-footer > section:nth-of-type(2) details > summary > h3 {
+    color: var(--color-footer-dark);
     font-size: 1rem;
     font-weight: 500;
-    color: var(--color-footer-dark);
 }
 
 .site-footer > section:nth-of-type(2) details:not([open]) .minus-icon,
@@ -1956,60 +1830,51 @@ main.hero-cards > aside li svg {
 }
 
 .site-footer > section:nth-of-type(2) details > ul {
-    margin-bottom: 1.25rem;
-    padding: 0.25rem 0 0.5rem;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding: 0.25rem 0 0.5rem;
 }
 
 .site-footer > section:nth-of-type(2) details > ul > li > a {
-    font-size: 0.875rem;
     color: var(--color-text-muted);
+    font-size: 0.875rem;
     text-decoration: none;
 }
 
-/* Footer Section 3 (Get the App) */
 .site-footer > section:nth-of-type(3) {
-    width: 100%;
-    max-width: 48rem;
-    margin: 0 auto;
-    padding: 0.5rem 1.25rem 2rem;
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding: 0.5rem 1.25rem 2rem;
 }
 
 .site-footer > section:nth-of-type(3) > h2 {
+    margin-bottom: 1rem;
+    color: var(--color-footer-dark);
     font-size: 1.25rem;
     font-weight: 700;
-    color: var(--color-footer-dark);
-    margin-bottom: 1rem;
 }
 
 .site-footer > section:nth-of-type(3) > ul {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 0.75rem;
 }
 
 .site-footer > section:nth-of-type(3) > ul > li img {
     height: 2.75rem;
-    width: auto;
 }
 
-/* Footer Section 4 (Taalkeuze & Back-to-top) */
 .site-footer > nav {
     position: relative;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
     max-width: 48rem;
     margin: 2rem auto 0;
     padding: 0 1.25rem 2rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
 }
 
 .site-footer > nav > select {
@@ -2027,10 +1892,10 @@ main.hero-cards > aside li svg {
     background-repeat: no-repeat, no-repeat;
     background-position: left 1rem center, right 1rem center;
     background-size: 1.15rem 1.15rem, 0.85rem 0.85rem;
+    color: var(--color-footer-dark);
     font-family: inherit;
     font-size: 0.9375rem;
     font-weight: 700;
-    color: var(--color-footer-dark);
     cursor: pointer;
     outline: none;
 }
@@ -2040,59 +1905,55 @@ main.hero-cards > aside li svg {
 }
 
 .site-footer > nav > button {
-    background: transparent;
     border: none;
-    cursor: pointer;
+    background: transparent;
     color: var(--color-footer-dark);
+    cursor: pointer;
 }
 
-/* Footer Section 5 (Donkere Socials & Copyright balk) */
 .site-footer > .footer-bottom {
-    width: 100vw;
-    max-width: 100vw;
-    margin-inline: calc(50% - 50vw);
-    padding: 2.25rem 1.25rem 2.5rem;
-    background-color: var(--color-footer-dark);
-    color: var(--color-white);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1.25rem;
+    margin-inline: calc(50% - 50vw);
+    padding: 2.25rem 1.25rem 2.5rem;
+    background-color: var(--color-footer-dark);
+    color: var(--color-white);
     text-align: center;
 }
 
 .site-footer > .footer-bottom > ul {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 0.875rem;
 }
 
 .site-footer > .footer-bottom > ul > li > a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 2.15rem;
     height: 2.15rem;
     border-radius: 50%;
     background-color: var(--color-white);
     color: var(--color-footer-dark);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     text-decoration: none;
 }
 
 .site-footer > .footer-bottom > small {
-    font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.75);
+    font-size: 0.75rem;
 }
 
 
+
 /* ==========================================================================
-   12. MEDIA QUERIES HOME PAGINA (TABLET & DESKTOP)
+   13. MEDIA QUERIES HOME PAGINA (TABLET & DESKTOP)
    ========================================================================== */
 @media (min-width: 48em) {
-    /* Need states (2 kolommen) */
     section.need-states {
         padding: 3.5rem 0 1rem;
     }
@@ -2102,19 +1963,17 @@ main.hero-cards > aside li svg {
     }
 
     ul.need-states-list {
-        margin-top: 2.5rem;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
+        margin-top: 2.5rem;
     }
 
-    /* Modals */
     dialog.need-state-modal {
         width: calc(100% - 4rem);
         max-width: 44rem;
         padding: 3rem 3rem 2.5rem;
     }
 
-    dialog.need-state-modal > button,
     dialog.need-state-modal button[aria-label] {
         top: 1.5rem;
         right: 1.5rem;
@@ -2132,13 +1991,13 @@ main.hero-cards > aside li svg {
     }
 
     dialog.need-state-modal header h3 {
-        font-size: 2rem;
         margin-bottom: 0.75rem;
+        font-size: 2rem;
     }
 
     dialog.need-state-modal header p {
-        font-size: 1.05rem;
         max-width: 34rem;
+        font-size: 1.05rem;
     }
 
     ul.modal-feature-list {
@@ -2154,7 +2013,6 @@ main.hero-cards > aside li svg {
         padding: 0 2.25rem;
     }
 
-    /* Testimonials */
     header.testimonials-hero {
         max-width: 46rem;
         margin: 4rem auto 3rem;
@@ -2162,43 +2020,37 @@ main.hero-cards > aside li svg {
     }
 
     header.testimonials-hero h2 {
-        font-size: 2.5rem;
         max-width: 34rem;
+        font-size: 2.5rem;
     }
 
-    header.testimonials-hero > img[src*="blue"] { width: 4.75rem; top: 0; left: 2rem; }
-    header.testimonials-hero > img[src*="orange"] { width: 4.5rem; bottom: 0.25rem; left: 2.5rem; }
-    header.testimonials-hero > img[src*="purple"] { width: 4.5rem; top: 0.5rem; right: 2.5rem; }
-    header.testimonials-hero > img[src*="pink"] { width: 3.75rem; bottom: 0; right: 2rem; }
+    header.testimonials-hero > img[src*="blue"]   { top: 0;      left: 2rem;    width: 4.75rem; }
+    header.testimonials-hero > img[src*="orange"] { bottom: 0.25rem; left: 2.5rem; width: 4.5rem; }
+    header.testimonials-hero > img[src*="purple"] { top: 0.5rem; right: 2.5rem; width: 4.5rem; }
+    header.testimonials-hero > img[src*="pink"]   { bottom: 0;   right: 2rem;   width: 3.75rem; }
 
-    header.testimonials-hero > img[src*="Star_1"] {
+    header.testimonials-hero > img:is([src*="Star_1"], [src*="Star_2"]) {
         display: block;
         width: 1.5rem;
-        top: 46%;
-        left: 0.5rem;
     }
 
-    header.testimonials-hero > img[src*="Star_2"] {
-        display: block;
-        width: 1.5rem;
-        top: 50%;
-        right: 0.5rem;
-    }
+    header.testimonials-hero > img[src*="Star_1"] { top: 46%; left: 0.5rem; }
+    header.testimonials-hero > img[src*="Star_2"] { top: 50%; right: 0.5rem; }
 
     ul.testimonials-slider {
+        gap: 1.25rem;
         max-width: 72rem;
         margin: 0 auto;
         padding: 0 2rem 1rem;
-        gap: 1.25rem;
     }
 
     li.testimonial-card {
+        display: flex;
+        flex-direction: column;
         flex: 0 0 calc(50% - 0.625rem);
         max-width: none;
         min-height: 22rem;
         padding: 2rem 2rem 1.75rem;
-        display: flex;
-        flex-direction: column;
     }
 
     li.testimonial-card blockquote p {
@@ -2217,14 +2069,13 @@ main.hero-cards > aside li svg {
         padding: 1.25rem 2rem 0;
     }
 
-    /* Organizations */
     main.hero-cards > section:has(> img[src*="image_50"]) {
         display: grid;
         grid-template-columns: 1.05fr 0.95fr;
         column-gap: 2.5rem;
         align-items: center;
-        text-align: left;
         padding: 2.25rem 3rem 3rem;
+        text-align: left;
     }
 
     main.hero-cards > section:has(> img[src*="image_50"]) > ul {
@@ -2239,22 +2090,22 @@ main.hero-cards > aside li svg {
     main.hero-cards > section:has(> img[src*="image_50"]) > h2 {
         grid-column: 1;
         grid-row: 2;
-        font-size: 2.25rem;
+        justify-self: start;
         max-width: 24rem;
         margin-bottom: 1.25rem;
-        justify-self: start;
+        font-size: 2.25rem;
     }
 
     main.hero-cards > section:has(> img[src*="image_50"]) > p {
         grid-column: 1;
         grid-row: 3;
-        font-size: 1rem;
+        justify-self: start;
         max-width: 22rem;
         margin-bottom: 2rem;
-        justify-self: start;
+        font-size: 1rem;
     }
 
-    main.hero-cards > section:has(> img[src*="image_50"]) > a:first-of-type {
+    main.hero-cards > section:has(> img[src*="image_50"]) > :is(a:first-of-type, a:last-of-type) {
         grid-column: 1;
         grid-row: 4;
         justify-self: start;
@@ -2262,33 +2113,28 @@ main.hero-cards > aside li svg {
     }
 
     main.hero-cards > section:has(> img[src*="image_50"]) > a:last-of-type {
-        grid-column: 1;
-        grid-row: 4;
-        justify-self: start;
         margin-left: 11.75rem;
-        margin-bottom: 0;
     }
 
     main.hero-cards > section:has(> img[src*="image_50"]) > img {
         grid-column: 2;
         grid-row: 2 / span 3;
-        max-width: 24rem;
         align-self: center;
+        max-width: 24rem;
     }
 
-    /* Stats / Wolkenkaart */
     main.hero-cards > aside + section + section {
         width: calc(100% - 2rem);
         max-width: 72rem;
-        margin: 2.5rem auto;
         min-height: 38rem;
+        margin: 2.5rem auto;
         padding: 4.5rem 2.5rem;
         border-radius: 1.5rem;
     }
 
     main.hero-cards > aside + section + section > h2 {
-        font-size: 2.75rem;
         max-width: 30rem;
+        font-size: 2.75rem;
     }
 
     main.hero-cards > aside + section + section > a {
@@ -2296,73 +2142,66 @@ main.hero-cards > aside li svg {
     }
 
     main.hero-cards > aside + section + section > dl {
-        max-width: 56rem;
         grid-template-columns: repeat(4, 1fr);
         column-gap: 1.5rem;
         row-gap: 0.5rem;
+        max-width: 56rem;
     }
 
     main.hero-cards > aside + section + section > dl > dd {
-        font-size: 2.125rem;
         min-height: 2.5rem;
+        font-size: 2.125rem;
     }
 
-    main.hero-cards > aside + section + section > dl > dd:nth-of-type(1) { grid-column: 1; grid-row: 1; }
-    main.hero-cards > aside + section + section > dl > dt:nth-of-type(1) { grid-column: 1; grid-row: 2; margin-bottom: 0; }
-    main.hero-cards > aside + section + section > dl > dd:nth-of-type(2) { grid-column: 2; grid-row: 1; }
-    main.hero-cards > aside + section + section > dl > dt:nth-of-type(2) { grid-column: 2; grid-row: 2; margin-bottom: 0; }
-    main.hero-cards > aside + section + section > dl > dd:nth-of-type(3) { grid-column: 3; grid-row: 1; }
-    main.hero-cards > aside + section + section > dl > dt:nth-of-type(3) { grid-column: 3; grid-row: 2; margin-bottom: 0; }
-    main.hero-cards > aside + section + section > dl > dd:nth-of-type(4) { grid-column: 4; grid-row: 1; }
-    main.hero-cards > aside + section + section > dl > dt:nth-of-type(4) { grid-column: 4; grid-row: 2; margin-bottom: 0; }
+    main.hero-cards > aside + section + section > dl > :is(dd:nth-of-type(1), dt:nth-of-type(1)) { grid-column: 1; }
+    main.hero-cards > aside + section + section > dl > :is(dd:nth-of-type(2), dt:nth-of-type(2)) { grid-column: 2; }
+    main.hero-cards > aside + section + section > dl > :is(dd:nth-of-type(3), dt:nth-of-type(3)) { grid-column: 3; }
+    main.hero-cards > aside + section + section > dl > :is(dd:nth-of-type(4), dt:nth-of-type(4)) { grid-column: 4; }
+    main.hero-cards > aside + section + section > dl > :is(dd:nth-of-type(-n + 4)) { grid-row: 1; }
+    main.hero-cards > aside + section + section > dl > :is(dt:nth-of-type(-n + 4)) { grid-row: 2; margin-bottom: 0; }
 
-    /* Pre-footer & Stay in the loop */
     .pre-footer-banner > a {
         margin: 3.5rem auto 2rem;
         padding: 1.5rem 2.75rem;
         font-size: 1.375rem;
     }
 
-    main.hero-cards > .site-footer > nav > svg {
-        width: 105%;
-        max-width: 90rem;
-    }
-
     .site-footer > section:first-of-type {
-        max-width: 72rem;
-        padding: 2.75rem 2rem;
         display: grid;
         grid-template-columns: 1fr auto;
         column-gap: 2.5rem;
         align-items: center;
+        max-width: 72rem;
+        padding: 2.75rem 2rem;
     }
 
-    .site-footer > section:first-of-type > h2 { grid-column: 1; grid-row: 1; font-size: 1.375rem; margin-bottom: 0.5rem; }
+    .site-footer > section:first-of-type > h2 { grid-column: 1; grid-row: 1; margin-bottom: 0.5rem; font-size: 1.375rem; }
     .site-footer > section:first-of-type > p:first-of-type { grid-column: 1; grid-row: 2; max-width: 24rem; margin-bottom: 0.75rem; }
     .site-footer > section:first-of-type > p:last-of-type { grid-column: 1; grid-row: 3; max-width: 24rem; margin-bottom: 0; }
 
     .site-footer > section:first-of-type > form {
         grid-column: 2;
         grid-row: 1 / span 3;
-        width: auto;
         flex-direction: row;
         align-items: center;
         gap: 0.75rem;
+        width: auto;
+    }
+
+    :is(.site-footer > section:first-of-type input[type="email"], .site-footer > section:first-of-type button[type="submit"]) {
+        flex-shrink: 0;
     }
 
     .site-footer > section:first-of-type input[type="email"] {
         width: 14rem;
-        flex-shrink: 0;
     }
 
     .site-footer > section:first-of-type button[type="submit"] {
-        flex-shrink: 0;
         white-space: nowrap;
     }
 }
 
 @media (min-width: 64em) {
-    /* Need states (3 kolommen) & Modal */
     h2.need-states-title {
         font-size: 2.25rem;
     }
@@ -2377,22 +2216,21 @@ main.hero-cards > aside li svg {
         padding: 3.5rem 4rem 3rem;
     }
 
-    /* Deeper Dive Section */
     section.deeper-dive-section > h2 {
-        font-size: 2.5rem;
         max-width: 34rem;
         margin-bottom: 2rem;
+        font-size: 2.5rem;
     }
 
     nav.deeper-dive-tabs {
         justify-content: center;
-        overflow-x: visible;
         padding-bottom: 2.25rem;
+        overflow-x: visible;
     }
 
     ul.deeper-dive-slides {
-        padding: 0 calc((100vw - 64rem) / 2);
         gap: 2rem;
+        padding: 0 calc((100vw - 64rem) / 2);
     }
 
     ul.deeper-dive-slides > li {
@@ -2406,41 +2244,36 @@ main.hero-cards > aside li svg {
         grid-template-columns: 1.05fr 0.95fr;
         column-gap: 3rem;
         align-items: center;
-        text-align: left;
-        padding: 3rem 3.5rem;
         height: 31rem;
+        padding: 3rem 3.5rem;
+        text-align: left;
     }
 
-    article.dive-slide > h3,
-    article.dive-slide > p,
-    article.dive-slide > figure.audio-player,
-    article.dive-slide > a.dive-cta {
+    article.dive-slide > :is(h3, p, figure.audio-player, a.dive-cta) {
         grid-column: 2;
         justify-self: start;
     }
 
     article.dive-slide > h3 {
-        font-size: 2.25rem;
         margin-bottom: 1rem;
+        font-size: 2.25rem;
     }
 
     article.dive-slide > p {
-        font-size: 1.0625rem;
         max-width: 26rem;
         margin-bottom: 1.5rem;
+        font-size: 1.0625rem;
     }
 
-    article.dive-slide > svg,
-    article.dive-slide > img {
+    article.dive-slide > :is(svg, img) {
         grid-column: 1;
         grid-row: 1 / span 5;
         max-width: 24rem;
         max-height: 23rem;
-        object-fit: contain;
         margin: auto;
+        object-fit: contain;
     }
 
-    /* Explore Our Library */
     main.hero-cards > section:has(> nav.library-tabs) {
         padding: 5rem 2rem;
     }
@@ -2457,7 +2290,6 @@ main.hero-cards > aside li svg {
         flex: 0 0 calc((100% - 4.5rem) / 4);
     }
 
-    /* Testimonials */
     header.testimonials-hero {
         max-width: 56rem;
         margin: 5rem auto 3.5rem;
@@ -2465,16 +2297,16 @@ main.hero-cards > aside li svg {
     }
 
     header.testimonials-hero h2 {
-        font-size: 2.875rem;
         max-width: 40rem;
+        font-size: 2.875rem;
     }
 
-    header.testimonials-hero > img[src*="blue"] { width: 5.25rem; left: 3rem; }
+    header.testimonials-hero > img[src*="blue"]   { left: 3rem;   width: 5.25rem; }
     header.testimonials-hero > img[src*="Star_1"] { left: 1rem; }
-    header.testimonials-hero > img[src*="orange"] { width: 5rem; left: 3.5rem; }
-    header.testimonials-hero > img[src*="purple"] { width: 5rem; right: 3.5rem; }
+    header.testimonials-hero > img[src*="orange"] { left: 3.5rem; width: 5rem; }
+    header.testimonials-hero > img[src*="purple"] { right: 3.5rem; width: 5rem; }
     header.testimonials-hero > img[src*="Star_2"] { right: 1rem; }
-    header.testimonials-hero > img[src*="pink"] { width: 4.25rem; right: 3rem; }
+    header.testimonials-hero > img[src*="pink"]   { right: 3rem;  width: 4.25rem; }
 
     ul.testimonials-slider {
         gap: 1.5rem;
@@ -2492,10 +2324,9 @@ main.hero-cards > aside li svg {
         line-height: 1.38;
     }
 
-    /* Organizations */
     main.hero-cards > section:has(> img[src*="image_50"]) {
-        padding: 2.5rem 4.5rem 3.75rem;
         column-gap: 3.5rem;
+        padding: 2.5rem 4.5rem 3.75rem;
     }
 
     main.hero-cards > section:has(> img[src*="image_50"]) > ul {
@@ -2505,40 +2336,38 @@ main.hero-cards > aside li svg {
     }
 
     main.hero-cards > section:has(> img[src*="image_50"]) > h2 {
-        font-size: 2.75rem;
         max-width: 28rem;
+        font-size: 2.75rem;
     }
 
     main.hero-cards > section:has(> img[src*="image_50"]) > p {
-        font-size: 1.0625rem;
         max-width: 25rem;
+        font-size: 1.0625rem;
     }
 
     main.hero-cards > section:has(> img[src*="image_50"]) > img {
         max-width: 28rem;
     }
 
-    /* Stats / Wolkenkaart */
     main.hero-cards > aside + section + section {
         min-height: 42rem;
         padding: 5.5rem 3rem 5rem;
     }
 
     main.hero-cards > aside + section + section > h2 {
-        font-size: 3.25rem;
         max-width: 35rem;
+        font-size: 3.25rem;
     }
 
     main.hero-cards > aside + section + section > dl {
-        max-width: 60rem;
         column-gap: 2rem;
+        max-width: 60rem;
     }
 
     main.hero-cards > aside + section + section > dl > dd {
         font-size: 2.375rem;
     }
 
-    /* Desktop Footer Grid */
     .site-footer {
         display: grid;
         grid-template-columns:
@@ -2559,8 +2388,7 @@ main.hero-cards > aside li svg {
         padding: 3rem 0;
     }
 
-    .site-footer > section:nth-of-type(1) > p:first-of-type,
-    .site-footer > section:nth-of-type(1) > p:last-of-type {
+    .site-footer > :is(section:nth-of-type(1) > p:first-of-type, section:nth-of-type(1) > p:last-of-type) {
         max-width: 28rem;
     }
 
@@ -2568,11 +2396,7 @@ main.hero-cards > aside li svg {
         width: 18rem;
     }
 
-    .site-footer > section:nth-of-type(2),
-    .site-footer > section:nth-of-type(2) > ul,
-    .site-footer > section:nth-of-type(3),
-    .site-footer > nav,
-    .site-footer > .footer-bottom {
+    :is(.site-footer > section:nth-of-type(2), .site-footer > section:nth-of-type(2) > ul, .site-footer > section:nth-of-type(3), .site-footer > nav, .site-footer > .footer-bottom) {
         display: contents;
     }
 
@@ -2581,49 +2405,43 @@ main.hero-cards > aside li svg {
     .site-footer > section:nth-of-type(2) > ul > li:nth-of-type(3) { grid-column: 5; grid-row: 2 / 5; }
     .site-footer > section:nth-of-type(2) > ul > li:nth-of-type(4) { grid-column: 4; grid-row: 2 / 5; }
 
-    .site-footer > section:nth-of-type(2) > ul > li:nth-of-type(-n+4) {
-        border-bottom: none;
+    .site-footer > section:nth-of-type(2) > ul > li:nth-of-type(-n + 4) {
         padding: 2.75rem 0 1.5rem;
+        border-bottom: none;
     }
 
-    .site-footer > section:nth-of-type(2) > ul > li:nth-of-type(-n+4) summary {
+    .site-footer > section:nth-of-type(2) > ul > li:nth-of-type(-n + 4) summary {
         padding: 0 0 1rem;
         cursor: default;
         pointer-events: none;
     }
 
-    .site-footer > section:nth-of-type(2) > ul > li:nth-of-type(-n+4) summary svg {
+    .site-footer > section:nth-of-type(2) > ul > li:nth-of-type(-n + 4) summary svg {
         display: none;
     }
 
-    .site-footer > section:nth-of-type(2) > ul > li:nth-of-type(-n+4) summary h3 {
+    .site-footer > section:nth-of-type(2) > ul > li:nth-of-type(-n + 4) summary h3 {
+        color: var(--color-text-dark);
         font-size: 0.9375rem;
         font-weight: 700;
-        color: var(--color-text-dark);
     }
 
-    .site-footer > section:nth-of-type(2) > h2 {
-        grid-column: 6;
+    .site-footer > :is(section:nth-of-type(2) > h2, section:nth-of-type(3) > h2) {
         grid-row: 2;
-        font-size: 0.9375rem;
-        color: var(--color-text-dark);
         margin: 2.75rem 0 1rem;
+        color: var(--color-text-dark);
+        font-size: 0.9375rem;
     }
+
+    .site-footer > section:nth-of-type(2) > h2 { grid-column: 6; }
+    .site-footer > section:nth-of-type(3) > h2 { grid-column: 7; }
 
     .site-footer > section:nth-of-type(2) > a {
         grid-column: 6;
         grid-row: 3;
-        margin: 0;
         max-width: 9.5rem;
         height: 2.85rem;
-    }
-
-    .site-footer > section:nth-of-type(3) > h2 {
-        grid-column: 7;
-        grid-row: 2;
-        font-size: 0.9375rem;
-        color: var(--color-text-dark);
-        margin: 2.75rem 0 1rem;
+        margin: 0;
     }
 
     .site-footer > section:nth-of-type(3) > ul {
@@ -2646,39 +2464,36 @@ main.hero-cards > aside li svg {
         margin: 2rem 0 1.5rem;
     }
 
-    /* Grijze onderbalk desktop */
     .site-footer::after {
         content: "";
+        z-index: 0;
         grid-column: 1 / -1;
         grid-row: 5;
-        background-color: var(--color-footer-dark);
         align-self: stretch;
-        z-index: 0;
+        background-color: var(--color-footer-dark);
     }
 
     .site-footer > .footer-bottom > small {
+        z-index: 1;
         grid-column: 2;
         grid-row: 5;
         align-self: center;
+        padding: 1.5rem 0;
         font-size: 0.72rem;
         white-space: nowrap;
-        padding: 1.5rem 0;
-        z-index: 1;
     }
 
     .site-footer > section:nth-of-type(2) > ul > li:nth-child(5) {
+        z-index: 1;
         grid-column: 3 / 6;
         grid-row: 5;
         align-self: center;
-        border-bottom: none;
-        padding: 1.5rem 0;
         margin-left: -2.25rem;
-        z-index: 1;
+        padding: 1.5rem 0;
+        border-bottom: none;
     }
 
-    .site-footer > section:nth-of-type(2) > ul > li:nth-child(5) summary,
-    .site-footer > section:nth-of-type(2) > ul > li:nth-child(5) details > ul li:nth-child(n+6),
-    .site-footer > section:nth-of-type(2) > ul > li:nth-child(5) details > ul img {
+    .site-footer > section:nth-of-type(2) > ul > li:nth-child(5) :is(summary, ul li:nth-child(n + 6), ul img) {
         display: none;
     }
 
@@ -2695,45 +2510,118 @@ main.hero-cards > aside li svg {
     }
 
     .site-footer > .footer-bottom > ul {
+        z-index: 1;
         grid-column: 6;
         grid-row: 5;
         align-self: center;
         justify-self: end;
         gap: 0.5rem;
-        z-index: 1;
     }
 
     .site-footer > nav > select {
+        z-index: 1;
         grid-column: 7;
         grid-row: 5;
         align-self: center;
         justify-self: end;
         width: auto;
         min-width: 8.5rem;
-        color: var(--color-white);
-        border-color: rgba(255, 255, 255, 0.45);
-        padding: 0.5rem 1.75rem 0.5rem 1.25rem;
-        font-size: 0.8125rem;
         margin: 1.25rem 0;
-        z-index: 1;
+        padding: 0.5rem 1.75rem 0.5rem 1.25rem;
+        border-color: rgba(255, 255, 255, 0.45);
+        color: var(--color-white);
+        font-size: 0.8125rem;
     }
 }
 
 
 /* ==========================================================================
-   13. SLEEP PAGE (PAGINA 2) - MOBILE FIRST
+   14. SLEEP PAGE (PAGINA 2) - MOBILE FIRST
    ========================================================================== */
+.sleep-page :is(section:nth-of-type(1), section:nth-of-type(4)) figure button {
+    grid-row: 1 / 3;
+    display: inline-grid;
+    place-content: center;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
 
-/* --- Sectie 1: Hero --- */
-.sleep-page section:nth-of-type(1) {
-    background-color: var(--color-dark-blue);
+.sleep-page :is(section:nth-of-type(1), section:nth-of-type(4)) figure p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+}
+
+.sleep-page :is(section:nth-of-type(1), section:nth-of-type(4)) figure input[type="range"] {
+    flex: 1;
+    height: 0.2rem;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.sleep-page :is(section:nth-of-type(1), section:nth-of-type(4)) figure input[type="range"]::-webkit-slider-thumb {
+    width: 0.625rem;
+    height: 0.625rem;
+    margin-top: -0.22rem;
+    border-radius: 50%;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.sleep-page :is(section:nth-of-type(1) > a, section:nth-of-type(4) > a) {
+    display: inline-block;
+    border-radius: 1.5rem;
+    background-color: var(--color-primary-blue);
     color: var(--color-white);
-    padding: 3rem 1.5rem 3.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.sleep-page :is(section:nth-of-type(1) > a, section:nth-of-type(4) > a):is(:hover, :focus-visible) {
+    background-color: var(--color-primary-blue-hover);
+    transform: translateY(-0.125rem);
+}
+
+.sleep-page :is(section:nth-of-type(3) ul:last-of-type, section:nth-of-type(5) > ul:last-of-type) button {
+    display: inline-grid;
+    place-content: center;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sleep-page :is(section:nth-of-type(3) ul:last-of-type, section:nth-of-type(5) > ul:last-of-type) li:is(:first-child, :last-child) button {
+    background-color: transparent;
+    font-size: 1.25rem;
+}
+
+.sleep-page :is(section:nth-of-type(3) ul:last-of-type, section:nth-of-type(5) > ul:last-of-type) button.active {
+    background-color: var(--color-text-dark);
+    color: var(--color-white);
+}
+
+/* 14.1 Hero */
+.sleep-page section:nth-of-type(1) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     gap: 1.5rem;
+    padding: 3rem 1.5rem 3.5rem;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    text-align: center;
 }
 
 .sleep-page section:nth-of-type(1) header {
@@ -2745,8 +2633,8 @@ main.hero-cards > aside li svg {
 
 .sleep-page section:nth-of-type(1) h1 {
     font-size: 2.25rem;
-    line-height: 1.15;
     font-weight: 700;
+    line-height: 1.15;
 }
 
 .sleep-page section:nth-of-type(1) header p:first-of-type {
@@ -2756,39 +2644,31 @@ main.hero-cards > aside li svg {
 }
 
 .sleep-page section:nth-of-type(1) header p:last-of-type {
+    color: rgba(255, 255, 255, 0.88);
     font-size: 0.9rem;
     line-height: 1.55;
-    color: rgba(255, 255, 255, 0.88);
 }
 
 .sleep-page section:nth-of-type(1) figure {
-    background-color: #23295e;
-    border-radius: 0.75rem;
-    padding: 1rem 1.25rem;
-    margin: 0.25rem 0;
-    width: 100%;
-    max-width: 24rem;
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
     gap: 0.4rem 1rem;
+    width: 100%;
+    max-width: 24rem;
+    margin: 0.25rem 0;
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    background-color: #23295e;
     text-align: left;
 }
 
 .sleep-page section:nth-of-type(1) figure button {
-    grid-row: 1 / 3;
     width: 2.75rem;
     height: 2.75rem;
-    border-radius: 50%;
-    border: none;
     background-color: var(--color-white);
     color: var(--color-dark-blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
     font-size: 1rem;
-    transition: transform 0.2s ease;
 }
 
 .sleep-page section:nth-of-type(1) figure button:hover {
@@ -2796,55 +2676,23 @@ main.hero-cards > aside li svg {
 }
 
 .sleep-page section:nth-of-type(1) figcaption {
-    font-weight: 600;
     font-size: 0.9rem;
-}
-
-.sleep-page section:nth-of-type(1) figure p {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.75rem;
+    font-weight: 600;
 }
 
 .sleep-page section:nth-of-type(1) figure input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    flex: 1;
-    height: 0.2rem;
     background: rgba(255, 255, 255, 0.25);
-    border-radius: 2px;
-    outline: none;
-    cursor: pointer;
 }
 
 .sleep-page section:nth-of-type(1) figure input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 0.625rem;
-    height: 0.625rem;
-    border-radius: 50%;
     background: var(--color-yellow);
-    margin-top: -0.22rem;
-    cursor: pointer;
 }
 
 .sleep-page section:nth-of-type(1) > a {
-    display: inline-block;
-    background-color: var(--color-primary-blue);
-    color: var(--color-white);
-    text-decoration: none;
-    font-weight: 700;
+    width: fit-content;
+    padding: 0.9rem 1.85rem;
+    border-radius: 50rem;
     font-size: 0.95rem;
-    padding: 0.95rem 2.75rem;
-    border-radius: 1.5rem;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.sleep-page section:nth-of-type(1) > a:hover,
-.sleep-page section:nth-of-type(1) > a:focus-visible {
-    background-color: var(--color-primary-blue-hover);
-    transform: translateY(-0.125rem);
 }
 
 .sleep-page section:nth-of-type(1) > img {
@@ -2853,11 +2701,20 @@ main.hero-cards > aside li svg {
     margin-top: 1rem;
 }
 
-/* --- Sectie 2: Voordelen --- */
+/* 14.2 Voordelen */
 .sleep-page section:nth-of-type(2) {
+    padding: 3.5rem 1.5rem;
     background-color: var(--color-white);
     color: var(--color-text-dark);
-    padding: 3.5rem 1.5rem;
+}
+
+.sleep-page section:nth-of-type(2) > h2 {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .sleep-page section:nth-of-type(2) ul {
@@ -2867,65 +2724,58 @@ main.hero-cards > aside li svg {
 }
 
 .sleep-page section:nth-of-type(2) li {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 1.25rem;
 }
 
-.sleep-page section:nth-of-type(2) li:nth-child(even) {
-    grid-template-columns: 1fr auto;
-}
-
 .sleep-page section:nth-of-type(2) li img {
-    grid-column: 1;
-    grid-row: 1;
     width: 4.5rem;
     height: 4.5rem;
     object-fit: contain;
 }
 
-.sleep-page section:nth-of-type(2) h3 {
-    grid-column: 2;
-    grid-row: 1;
+.sleep-page section:nth-of-type(2) li h3 {
+    flex: 1;
     font-size: 1.15rem;
     font-weight: 700;
     text-align: left;
 }
 
+.sleep-page section:nth-of-type(2) li:nth-child(even) img {
+    order: 2;
+}
+
 .sleep-page section:nth-of-type(2) li:nth-child(even) h3 {
-    grid-column: 1;
+    order: 1;
     text-align: right;
 }
 
-.sleep-page section:nth-of-type(2) li:nth-child(even) img {
-    grid-column: 2;
-}
-
-.sleep-page section:nth-of-type(2) p {
-    grid-column: 1 / -1;
-    grid-row: 2;
+.sleep-page section:nth-of-type(2) li p {
+    order: 3;
+    flex: 0 0 100%;
+    max-width: 20rem;
+    margin: 0 auto;
+    color: var(--color-text-muted);
     font-size: 0.9rem;
     line-height: 1.55;
     text-align: center;
-    color: var(--color-text-muted);
-    max-width: 20rem;
-    justify-self: center;
 }
 
-/* --- Sectie 3: Latest sleep articles --- */
+/* 14.3 Latest sleep articles */
 .sleep-page section:nth-of-type(3) {
-    background-color: var(--color-white);
-    color: var(--color-text-dark);
-    padding: 1rem 1.5rem 3.5rem;
     max-width: 68rem;
     margin: 0 auto;
+    padding: 1rem 1.5rem 3.5rem;
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
 }
 
 .sleep-page section:nth-of-type(3) h2 {
+    margin-bottom: 1.5rem;
     font-size: 1.75rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
     text-align: left;
 }
 
@@ -2935,45 +2785,43 @@ main.hero-cards > aside li svg {
     gap: 1.25rem;
 }
 
-.sleep-page section:nth-of-type(3) ul:first-of-type li:nth-child(n+5),
-.sleep-page section:nth-of-type(3) ul:first-of-type.page-2 li:nth-child(-n+4) {
+.sleep-page section:nth-of-type(3) ul:first-of-type li:nth-child(n + 5),
+.sleep-page section:nth-of-type(3) ul:first-of-type.page-2 li:nth-child(-n + 4) {
     display: none;
 }
 
-.sleep-page section:nth-of-type(3) ul:first-of-type.page-2 li:nth-child(n+5) {
+.sleep-page section:nth-of-type(3) ul:first-of-type.page-2 li:nth-child(n + 5) {
     display: block;
 }
 
 .sleep-page section:nth-of-type(3) ul:first-of-type li a {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 1.15rem;
-    text-decoration: none;
     color: var(--color-text-dark);
-    font-weight: 700;
     font-size: 1rem;
+    font-weight: 700;
     line-height: 1.35;
+    text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.sleep-page section:nth-of-type(3) ul:first-of-type li a:hover,
-.sleep-page section:nth-of-type(3) ul:first-of-type li a:focus-visible {
+.sleep-page section:nth-of-type(3) ul:first-of-type li a:is(:hover, :focus-visible) {
     color: var(--color-primary-blue);
 }
 
 .sleep-page section:nth-of-type(3) ul:first-of-type img {
+    flex-shrink: 0;
     width: 4.75rem;
     height: 4.75rem;
-    flex-shrink: 0;
-    object-fit: cover;
     border-radius: 0.65rem;
+    object-fit: cover;
 }
 
 .sleep-page section:nth-of-type(3) ul:last-of-type {
-    margin-top: 2rem;
     display: flex;
     justify-content: center;
+    margin-top: 2rem;
 }
 
 .sleep-page section:nth-of-type(3) ul:last-of-type li {
@@ -2985,87 +2833,53 @@ main.hero-cards > aside li svg {
 .sleep-page section:nth-of-type(3) ul:last-of-type button {
     width: 2.25rem;
     height: 2.25rem;
-    border-radius: 50%;
-    border: none;
-    background-color: var(--color-bg-light);
-    color: var(--color-text-dark);
     font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.sleep-page section:nth-of-type(3) ul:last-of-type button:first-child,
-.sleep-page section:nth-of-type(3) ul:last-of-type button:last-child {
-    background-color: transparent;
-    font-size: 1.25rem;
-}
-
-.sleep-page section:nth-of-type(3) ul:last-of-type button.active {
-    background-color: var(--color-text-dark);
-    color: var(--color-white);
-}
-
-/* --- Sectie 4: Try our dreamy audio for free --- */
+/* 14.4 Try our dreamy audio for free */
 .sleep-page section:nth-of-type(4) {
-    background-color: var(--color-white);
-    color: var(--color-text-dark);
-    padding: 2.5rem 1.25rem 3.5rem;
-    max-width: 68rem;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 68rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 3.5rem;
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
 }
 
 .sleep-page section:nth-of-type(4) h2 {
+    margin-bottom: 1.25rem;
     font-size: 1.75rem;
     font-weight: 700;
-    margin-bottom: 1.25rem;
     text-align: center;
 }
 
 .sleep-page section:nth-of-type(4) > a {
-    display: inline-block;
-    background-color: var(--color-primary-blue);
-    color: var(--color-white);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    padding: 0.85rem 2rem;
-    border-radius: 1.5rem;
     margin-bottom: 2rem;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.sleep-page section:nth-of-type(4) > a:hover,
-.sleep-page section:nth-of-type(4) > a:focus-visible {
-    background-color: var(--color-primary-blue-hover);
-    transform: translateY(-0.125rem);
+    padding: 0.85rem 2rem;
+    font-size: 0.9rem;
 }
 
 .sleep-page section:nth-of-type(4) ul {
-    margin-bottom: -1rem;
+    position: relative;
+    z-index: 2;
     display: flex;
     justify-content: center;
     gap: 0.35rem;
-    position: relative;
-    z-index: 2;
+    margin-bottom: -1rem;
 }
 
 .sleep-page section:nth-of-type(4) ul button {
-    background-color: #6666CC;
-    color: var(--color-text-dark);
+    padding: 0.75rem 1rem;
     border: 0.5px solid transparent;
     border-radius: 0.75rem;
-    padding: 0.75rem 1rem;
+    background-color: #6666CC;
+    color: var(--color-text-dark);
     font-size: 0.85rem;
     font-weight: 500;
-    cursor: pointer;
     white-space: nowrap;
+    cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -3076,14 +2890,14 @@ main.hero-cards > aside li svg {
 
 .sleep-page section:nth-of-type(4) article {
     display: none;
+    width: 100%;
+    margin-bottom: 3.5rem;
+    padding: 3rem 1.5rem 0;
+    border-radius: 1.25rem;
     background-color: var(--color-dark-blue);
     color: var(--color-white);
-    border-radius: 1.25rem;
-    padding: 3rem 1.5rem 0;
-    width: 100%;
     text-align: center;
     overflow: visible;
-    margin-bottom: 3.5rem;
 }
 
 .sleep-page section:nth-of-type(4) article.active {
@@ -3094,84 +2908,59 @@ main.hero-cards > aside li svg {
 
 .sleep-page section:nth-of-type(4) article > p {
     grid-column: 1 / -1;
+    max-width: 24rem;
+    margin: 0 auto;
     font-size: 0.95rem;
     line-height: 1.55;
-    margin: 0 auto;
-    max-width: 24rem;
 }
 
 .sleep-page section:nth-of-type(4) figure {
     grid-column: 1 / -1;
-    background-color: var(--color-white);
-    color: var(--color-text-dark);
-    border-radius: 0.75rem;
-    padding: 0.9rem 1.15rem;
-    margin: 0.25rem auto 0.75rem;
-    width: 100%;
-    max-width: 22rem;
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
     gap: 0.35rem 0.9rem;
+    width: 100%;
+    max-width: 22rem;
+    margin: 0.25rem auto 0.75rem;
+    padding: 0.9rem 1.15rem;
+    border-radius: 0.75rem;
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
     text-align: left;
 }
 
 .sleep-page section:nth-of-type(4) figure button {
-    grid-row: 1 / 3;
     width: 2.5rem;
     height: 2.5rem;
-    border-radius: 50%;
-    border: none;
     background-color: var(--color-dark-blue);
     color: var(--color-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
     font-size: 0.95rem;
 }
 
 .sleep-page section:nth-of-type(4) figcaption {
-    font-weight: 700;
     font-size: 0.85rem;
+    font-weight: 700;
 }
 
 .sleep-page section:nth-of-type(4) figure p {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.75rem;
     color: var(--color-text-muted);
 }
 
 .sleep-page section:nth-of-type(4) figure input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    flex: 1;
-    height: 0.2rem;
     background: var(--color-border-light);
-    border-radius: 2px;
-    outline: none;
-    cursor: pointer;
 }
 
 .sleep-page section:nth-of-type(4) figure input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 0.625rem;
-    height: 0.625rem;
-    border-radius: 50%;
     background: var(--color-text-dark);
-    margin-top: -0.22rem;
-    cursor: pointer;
 }
 
 .sleep-page section:nth-of-type(4) article img {
     width: 100%;
     max-width: 6.2rem;
+    margin-bottom: -3rem;
     border-radius: 0.9rem;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-    margin-bottom: -3rem;
     transition: transform 0.35s ease, width 0.35s ease, left 0.35s ease, right 0.35s ease;
 }
 
@@ -3189,29 +2978,29 @@ main.hero-cards > aside li svg {
     transform: rotate(35deg) translateY(0.75rem);
 }
 
-/* --- Sectie 5: Explore sleep tips, tools, and insights --- */
+/* 14.5 Explore sleep tips, tools, and insights */
 .sleep-page section:nth-of-type(5) {
-    background-color: var(--color-white);
-    color: var(--color-text-dark);
-    padding: 2rem 1.25rem 3.5rem;
     max-width: 68rem;
     margin: 0 auto;
+    padding: 2rem 1.25rem 3.5rem;
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
 }
 
 .sleep-page section:nth-of-type(5) h2 {
+    margin-bottom: 1.75rem;
     font-size: 1.5rem;
     font-weight: 600;
-    margin-bottom: 1.75rem;
     text-align: center;
 }
 
 .sleep-page section:nth-of-type(5) article {
     display: none;
-    background-color: var(--color-bg-light);
-    border-radius: 1.25rem;
-    padding: 2rem 1.75rem;
     max-width: 19rem;
     margin: 0 auto;
+    padding: 2rem 1.75rem;
+    border-radius: 1.25rem;
+    background-color: var(--color-bg-light);
     text-align: left;
 }
 
@@ -3222,32 +3011,32 @@ main.hero-cards > aside li svg {
 }
 
 .sleep-page section:nth-of-type(5) article h3 {
+    margin-bottom: 0.85rem;
     font-size: 1.35rem;
     font-weight: 700;
-    margin-bottom: 0.85rem;
 }
 
 .sleep-page section:nth-of-type(5) article h3 a {
+    color: inherit;
     font-size: inherit;
     font-weight: inherit;
-    color: inherit;
     text-decoration: underline;
     text-underline-offset: 0.2rem;
 }
 
 .sleep-page section:nth-of-type(5) article p {
+    margin-bottom: 1.35rem;
+    color: var(--color-text-muted);
     font-size: 0.95rem;
     line-height: 1.55;
-    color: var(--color-text-muted);
-    margin-bottom: 1.35rem;
 }
 
 .sleep-page section:nth-of-type(5) article ul {
-    list-style-type: disc;
-    padding-left: 1.25rem;
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
+    padding-left: 1.25rem;
+    list-style-type: disc;
 }
 
 .sleep-page section:nth-of-type(5) article li::marker {
@@ -3263,69 +3052,47 @@ main.hero-cards > aside li svg {
     transition: color 0.2s ease;
 }
 
-.sleep-page section:nth-of-type(5) article a:hover,
-.sleep-page section:nth-of-type(5) article a:focus-visible {
+.sleep-page section:nth-of-type(5) article a:is(:hover, :focus-visible) {
     color: var(--color-primary-blue);
 }
 
 .sleep-page section:nth-of-type(5) > ul:last-of-type {
-    margin-top: 1.75rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    margin-top: 1.75rem;
 }
 
 .sleep-page section:nth-of-type(5) > ul:last-of-type button {
     width: 2rem;
     height: 2rem;
-    border-radius: 50%;
-    border: none;
-    background-color: var(--color-bg-light);
-    color: var(--color-text-dark);
     font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.sleep-page section:nth-of-type(5) > ul:last-of-type li:first-child button,
-.sleep-page section:nth-of-type(5) > ul:last-of-type li:last-child button {
-    background-color: transparent;
-    font-size: 1.25rem;
-}
-
-.sleep-page section:nth-of-type(5) > ul:last-of-type button.active {
-    background-color: var(--color-text-dark);
-    color: var(--color-white);
-}
-
-/* --- Sectie 6: Sleep made simple --- */
+/* 14.6 Sleep made simple */
 .sleep-page section:nth-of-type(6) {
+    padding: 3.5rem 1.25rem;
     background-color: var(--color-dark-blue);
     color: var(--color-white);
-    padding: 3.5rem 1.25rem;
     overflow: hidden;
 }
 
 .sleep-page section:nth-of-type(6) h2 {
+    max-width: 26rem;
+    margin: 0 auto 1.75rem;
     font-size: 1.85rem;
     font-weight: 700;
     text-align: center;
-    margin: 0 auto 1.75rem;
-    max-width: 26rem;
 }
 
 .sleep-page section:nth-of-type(6) > ul {
-    margin: 0 auto 2rem;
-    width: 100%;
-    max-width: 28rem;
     display: flex;
     flex-direction: column;
     gap: 1.15rem;
+    width: 100%;
+    max-width: 28rem;
+    margin: 0 auto 2rem;
 }
 
 .sleep-page section:nth-of-type(6) > ul li {
@@ -3338,48 +3105,48 @@ main.hero-cards > aside li svg {
 .sleep-page section:nth-of-type(6) > ul li::before {
     content: "✓";
     position: absolute;
-    left: 0;
     top: 0;
+    left: 0;
     font-weight: 700;
 }
 
 .sleep-page section:nth-of-type(6) form {
-    max-width: 28rem;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 28rem;
+    margin: 0 auto;
 }
 
 .sleep-page section:nth-of-type(6) fieldset {
-    border: none;
-    margin-bottom: 1.5rem;
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border: none;
 }
 
 .sleep-page section:nth-of-type(6) legend {
     position: absolute;
     width: 1px;
     height: 1px;
-    overflow: hidden;
     clip: rect(0, 0, 0, 0);
+    overflow: hidden;
 }
 
 .sleep-page section:nth-of-type(6) label {
     position: relative;
     display: grid;
     grid-template-columns: 1fr auto;
+    align-items: center;
     column-gap: 1rem;
     row-gap: 0.2rem;
-    align-items: center;
-    background-color: var(--color-white);
-    color: var(--color-text-dark);
+    padding: 1.25rem;
     border: 2px solid transparent;
     border-radius: 0.85rem;
-    padding: 1.25rem;
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
     cursor: pointer;
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
@@ -3392,18 +3159,18 @@ main.hero-cards > aside li svg {
 .sleep-page section:nth-of-type(6) label input[type="radio"] {
     grid-column: 2;
     grid-row: 1 / 4;
-    appearance: none;
-    -webkit-appearance: none;
-    width: 1.4rem;
-    height: 1.4rem;
-    border-radius: 0.3rem;
-    border: 2px solid #cfcfcf;
-    background-color: transparent;
-    margin: 0;
-    outline: none;
-    cursor: pointer;
     display: grid;
     place-content: center;
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: 0;
+    border: 2px solid #cfcfcf;
+    border-radius: 0.3rem;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 .sleep-page section:nth-of-type(6) label input[type="radio"]:checked {
@@ -3413,39 +3180,34 @@ main.hero-cards > aside li svg {
 
 .sleep-page section:nth-of-type(6) label input[type="radio"]:checked::before {
     content: "✓";
+    color: var(--color-purple);
     font-size: 0.95rem;
     font-weight: 700;
-    color: var(--color-purple);
     line-height: 1;
 }
 
-.sleep-page section:nth-of-type(6) label em,
-.sleep-page section:nth-of-type(6) label small,
-.sleep-page section:nth-of-type(6) label strong {
+.sleep-page section:nth-of-type(6) label :is(em, small, strong) {
     grid-column: 1;
 }
-
 
 .sleep-page section:nth-of-type(6) label:first-of-type strong:first-of-type {
     position: absolute;
     top: 0;
     left: 1.25rem;
-    transform: translateY(-50%);
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.35rem;
     background-color: var(--color-white);
     color: var(--color-text-dark);
     font-size: 0.72rem;
     font-weight: 700;
-    padding: 0.25rem 0.75rem;
-    border-radius: 0.35rem;
+    transform: translateY(-50%);
 }
 
-.sleep-page section:nth-of-type(6) label em,
-.sleep-page section:nth-of-type(6) label small {
-    font-style: normal;
+.sleep-page section:nth-of-type(6) label :is(em, small) {
     font-size: 0.85rem;
+    font-style: normal;
     opacity: 0.85;
 }
-
 
 .sleep-page section:nth-of-type(6) label strong:last-of-type {
     font-size: 1.3rem;
@@ -3454,16 +3216,16 @@ main.hero-cards > aside li svg {
 
 .sleep-page section:nth-of-type(6) footer {
     width: 100%;
-    text-align: center;
     margin-bottom: 2.5rem;
+    text-align: center;
 }
 
 .sleep-page section:nth-of-type(6) footer ul {
-    margin-bottom: 1.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
+    margin-bottom: 1.25rem;
     font-size: 0.78rem;
 }
 
@@ -3482,19 +3244,18 @@ main.hero-cards > aside li svg {
     width: 100%;
     max-width: 20rem;
     margin: 0 auto;
-    background-color: var(--color-white);
-    color: var(--color-text-dark);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1rem;
     padding: 1.15rem 2rem;
     border-radius: 2rem;
+    background-color: var(--color-white);
+    color: var(--color-text-dark);
+    font-size: 1rem;
+    font-weight: 700;
     text-align: center;
+    text-decoration: none;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.sleep-page section:nth-of-type(6) footer > a:hover,
-.sleep-page section:nth-of-type(6) footer > a:focus-visible {
+.sleep-page section:nth-of-type(6) footer > a:is(:hover, :focus-visible) {
     background-color: var(--color-bg-light);
     transform: translateY(-0.125rem);
 }
@@ -3507,55 +3268,54 @@ main.hero-cards > aside li svg {
 
 
 /* ==========================================================================
-   14. SLEEP PAGE (PAGINA 2) - TABLET & DESKTOP MEDIA QUERIES
+   15. SLEEP PAGE (PAGINA 2) - TABLET & DESKTOP MEDIA QUERIES
    ========================================================================== */
 @media (min-width: 48em) {
-    /* Sectie 2: Voordelen - Tablet */
+    /* 15.1 Voordelen - Tablet */
     .sleep-page section:nth-of-type(2) {
         padding: 4.5rem 2rem;
     }
 
     .sleep-page section:nth-of-type(2) ul {
+        gap: 2.75rem;
         max-width: 46rem;
         margin: 0 auto;
-        gap: 2.75rem;
     }
 
-    .sleep-page section:nth-of-type(2) li,
-    .sleep-page section:nth-of-type(2) li:nth-child(even) {
-        grid-template-columns: auto minmax(11rem, 13rem) 1fr;
-        column-gap: 1.5rem;
+    .sleep-page section:nth-of-type(2) li {
+        flex-wrap: nowrap;
+        gap: 1.5rem;
     }
 
-    .sleep-page section:nth-of-type(2) li img,
-    .sleep-page section:nth-of-type(2) li:nth-child(even) img {
-        grid-column: 1;
+    .sleep-page section:nth-of-type(2) li img {
+        order: 0;
+        flex-shrink: 0;
         width: 4.25rem;
         height: 4.25rem;
     }
 
-    .sleep-page section:nth-of-type(2) h3,
-    .sleep-page section:nth-of-type(2) li:nth-child(even) h3 {
-        grid-column: 2;
+    .sleep-page section:nth-of-type(2) li h3 {
+        order: 0;
+        flex: 0 0 minmax(11rem, 13rem);
         text-align: left;
     }
 
-    .sleep-page section:nth-of-type(2) p {
-        grid-column: 3;
-        grid-row: 1;
-        text-align: left;
+    .sleep-page section:nth-of-type(2) li p {
+        order: 0;
+        flex: 1;
         max-width: none;
-        justify-self: start;
+        margin: 0;
+        text-align: left;
     }
 
-    /* Sectie 3: Latest sleep articles - Tablet */
+    /* 15.2 Latest sleep articles - Tablet */
     .sleep-page section:nth-of-type(3) {
         padding: 2rem 2rem 4rem;
     }
 
     .sleep-page section:nth-of-type(3) h2 {
-        font-size: 2rem;
         margin-bottom: 2rem;
+        font-size: 2rem;
     }
 
     .sleep-page section:nth-of-type(3) ul:first-of-type {
@@ -3571,8 +3331,8 @@ main.hero-cards > aside li svg {
 
     .sleep-page section:nth-of-type(3) ul:first-of-type li a {
         flex-direction: column;
-        text-align: center;
         gap: 0.85rem;
+        text-align: center;
     }
 
     .sleep-page section:nth-of-type(3) ul:first-of-type img {
@@ -3581,16 +3341,16 @@ main.hero-cards > aside li svg {
         border-radius: 1rem;
     }
 
-    /* Sectie 4: Try our dreamy audio - Tablet */
+    /* 15.3 Try our dreamy audio - Tablet */
     .sleep-page section:nth-of-type(4) {
-        max-width: none;
         width: 100%;
+        max-width: none;
         padding: 3.5rem 2.5rem 5rem;
     }
 
     .sleep-page section:nth-of-type(4) h2 {
-        font-size: 2.25rem;
         margin-bottom: 1.5rem;
+        font-size: 2.25rem;
     }
 
     .sleep-page section:nth-of-type(4) ul {
@@ -3612,8 +3372,8 @@ main.hero-cards > aside li svg {
         width: 100%;
         max-width: 78rem;
         min-height: 22rem;
-        padding: 4.5rem 14rem;
         margin-bottom: 2.5rem;
+        padding: 4.5rem 14rem;
     }
 
     .sleep-page section:nth-of-type(4) article > p {
@@ -3627,34 +3387,33 @@ main.hero-cards > aside li svg {
         margin: 0 auto;
     }
 
-    .sleep-page section:nth-of-type(4) article img:first-of-type {
+    .sleep-page section:nth-of-type(4) article img {
         position: absolute;
-        left: -1rem;
-        bottom: -2rem;
         width: 10rem;
         max-width: none;
         margin: 0;
+    }
+
+    .sleep-page section:nth-of-type(4) article img:first-of-type {
+        bottom: -2rem;
+        left: -1rem;
         transform: rotate(15deg);
     }
 
     .sleep-page section:nth-of-type(4) article img:last-of-type {
-        position: absolute;
-        right: -1rem;
         top: -2rem;
-        width: 10rem;
-        max-width: none;
-        margin: 0;
+        right: -1rem;
         transform: rotate(-15deg);
     }
 
-    /* Sectie 5: Explore sleep tips - Tablet */
+    /* 15.4 Explore sleep tips - Tablet */
     .sleep-page section:nth-of-type(5) {
         padding: 3rem 2rem 4.5rem;
     }
 
     .sleep-page section:nth-of-type(5) h2 {
-        font-size: 2rem;
         margin-bottom: 2.25rem;
+        font-size: 2rem;
     }
 
     .sleep-page section:nth-of-type(5) > ul:first-of-type {
@@ -3666,13 +3425,12 @@ main.hero-cards > aside li svg {
     }
 
     .sleep-page section:nth-of-type(5) > ul:first-of-type > li,
-    .sleep-page section:nth-of-type(5) > ul:last-of-type li:nth-child(4),
-    .sleep-page section:nth-of-type(5) > ul:last-of-type li:nth-child(5) {
+    .sleep-page section:nth-of-type(5) > ul:last-of-type :is(li:nth-child(4), li:nth-child(5)) {
         display: none;
     }
 
-    .sleep-page section:nth-of-type(5) > ul:first-of-type:not(.page-2) > li:nth-child(-n+2),
-    .sleep-page section:nth-of-type(5) > ul:first-of-type.page-2 > li:nth-child(n+3) {
+    .sleep-page section:nth-of-type(5) > ul:first-of-type:not(.page-2) > li:nth-child(-n + 2),
+    .sleep-page section:nth-of-type(5) > ul:first-of-type.page-2 > li:nth-child(n + 3) {
         display: block;
     }
 
@@ -3680,24 +3438,21 @@ main.hero-cards > aside li svg {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        max-width: none;
         height: 100%;
+        max-width: none;
         padding: 2.25rem 1.75rem;
     }
 
-    /* Sectie 6: Sleep made simple - Tablet */
+    /* 15.5 Sleep made simple - Tablet */
     .sleep-page section:nth-of-type(6) {
         display: grid;
         grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
         align-items: center;
-        padding: 4.5rem max(2rem, calc((100vw - 68rem) / 2));
         column-gap: 3rem;
+        padding: 4.5rem max(2rem, calc((100vw - 68rem) / 2));
     }
 
-    .sleep-page section:nth-of-type(6) h2,
-    .sleep-page section:nth-of-type(6) > ul,
-    .sleep-page section:nth-of-type(6) fieldset,
-    .sleep-page section:nth-of-type(6) footer {
+    .sleep-page section:nth-of-type(6) :is(h2, > ul, fieldset, footer) {
         grid-column: 1;
         width: 100%;
         max-width: 30rem;
@@ -3720,26 +3475,24 @@ main.hero-cards > aside li svg {
     .sleep-page section:nth-of-type(6) form > img {
         grid-column: 2;
         grid-row: 1 / 5;
-        max-width: 24rem;
-        justify-self: center;
         align-self: center;
+        justify-self: center;
+        max-width: 24rem;
     }
 }
 
 @media (min-width: 53.125em) {
-    /* Sectie 1: Hero - Desktop */
+    /* 15.6 Hero - Desktop */
     .sleep-page section:nth-of-type(1) {
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
-        text-align: left;
-        padding: 4.5rem max(2rem, calc((100vw - 68rem) / 2));
         column-gap: 3.5rem;
+        padding: 4.5rem max(2rem, calc((100vw - 68rem) / 2));
+        text-align: left;
     }
 
-    .sleep-page section:nth-of-type(1) header,
-    .sleep-page section:nth-of-type(1) figure,
-    .sleep-page section:nth-of-type(1) > a {
+    .sleep-page section:nth-of-type(1) :is(header, figure, > a) {
         grid-column: 1;
         justify-self: start;
     }
@@ -3751,42 +3504,49 @@ main.hero-cards > aside li svg {
     .sleep-page section:nth-of-type(1) > img {
         grid-column: 2;
         grid-row: 1 / 4;
-        max-width: 28rem;
         justify-self: center;
+        max-width: 28rem;
         margin-top: 0;
     }
 }
 
 @media (min-width: 64em) {
-    /* Sectie 2: Voordelen - Desktop */
+    /* 15.7 Voordelen - Desktop */
     .sleep-page section:nth-of-type(2) ul {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        align-items: start;
+        flex-direction: row;
+        align-items: flex-start;
         gap: 2.5rem;
         max-width: 68rem;
     }
 
-    .sleep-page section:nth-of-type(2) li,
-    .sleep-page section:nth-of-type(2) li:nth-child(even) {
-        grid-template-columns: auto 1fr;
+    .sleep-page section:nth-of-type(2) li {
+        flex: 1;
+        flex-wrap: wrap;
         gap: 1rem;
     }
 
-    .sleep-page section:nth-of-type(2) p {
-        grid-column: 1 / -1;
-        grid-row: 2;
-        text-align: center;
-        max-width: 18rem;
-        justify-self: center;
+    .sleep-page section:nth-of-type(2) li:nth-child(even) :is(img, h3) {
+        order: 0;
     }
 
-    /* Sectie 3: Latest sleep articles - Desktop */
+    .sleep-page section:nth-of-type(2) li h3 {
+        flex: 1;
+        text-align: left;
+    }
+
+    .sleep-page section:nth-of-type(2) li p {
+        flex: 0 0 100%;
+        max-width: 18rem;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /* 15.8 Latest sleep articles - Desktop */
     .sleep-page section:nth-of-type(3) ul:first-of-type li {
         flex: 1 1 calc((100% - 4.5rem) / 4);
     }
 
-    /* Sectie 4: Try our dreamy audio - Desktop */
+    /* 15.9 Try our dreamy audio - Desktop */
     .sleep-page section:nth-of-type(4) {
         padding: 4rem 4rem 6rem;
     }
@@ -3800,19 +3560,21 @@ main.hero-cards > aside li svg {
         max-width: 38rem;
     }
 
-    .sleep-page section:nth-of-type(4) article img:first-of-type {
-        left: -1.75rem;
-        bottom: -2.5rem;
+    .sleep-page section:nth-of-type(4) article img {
         width: 12.5rem;
+    }
+
+    .sleep-page section:nth-of-type(4) article img:first-of-type {
+        bottom: -2.5rem;
+        left: -1.75rem;
     }
 
     .sleep-page section:nth-of-type(4) article img:last-of-type {
-        right: -1.75rem;
         top: -2.5rem;
-        width: 12.5rem;
+        right: -1.75rem;
     }
 
-    /* Sectie 5: Explore sleep tips - Desktop */
+    /* 15.10 Explore sleep tips - Desktop */
     .sleep-page section:nth-of-type(5) {
         max-width: 68rem;
         padding: 3.5rem 2.5rem 5rem;
@@ -3832,7 +3594,7 @@ main.hero-cards > aside li svg {
         display: none;
     }
 
-    .sleep-page section:nth-of-type(5) > ul:first-of-type:not(.page-2) > li:nth-child(-n+3) {
+    .sleep-page section:nth-of-type(5) > ul:first-of-type:not(.page-2) > li:nth-child(-n + 3) {
         display: block;
     }
 
@@ -3841,10 +3603,10 @@ main.hero-cards > aside li svg {
         grid-column: 2;
     }
 
-    /* Sectie 6: Sleep made simple - Desktop */
+    /* 15.11 Sleep made simple - Desktop */
     .sleep-page section:nth-of-type(6) {
-        padding: 5.5rem max(2.5rem, calc((100vw - 68rem) / 2));
         column-gap: 4.5rem;
+        padding: 5.5rem max(2.5rem, calc((100vw - 68rem) / 2));
     }
 
     .sleep-page section:nth-of-type(6) h2 {
@@ -3858,14 +3620,14 @@ main.hero-cards > aside li svg {
 
 
 /* ==========================================================================
-   15. DESKTOP NAVIGATIE (VANAF 75em / 1200px)
+   16. DESKTOP NAVIGATIE (VANAF 75em / 1200px)
    ========================================================================== */
 @media (min-width: 75em) {
     .main-nav {
         display: flex;
         align-items: center;
-        padding: 0 2.5rem;
         height: 4.5rem;
+        padding: 0 2.5rem;
     }
 
     .main-nav > ul:first-of-type {
@@ -3877,19 +3639,16 @@ main.hero-cards > aside li svg {
         margin-right: 2rem;
     }
 
-    .main-nav .nav-toggle,
-    dialog.mobile-menu-overlay .menu-close-btn,
-    dialog.mobile-menu-overlay .menu-cta-btn,
-    .menu-row-btn .arrow-icon,
-    .submenu-header,
-    .submenu-panel footer {
+    .main-nav :is(.nav-toggle, .menu-row-btn .arrow-icon, .submenu-header, .submenu-panel footer),
+    dialog.mobile-menu-overlay :is(.menu-close-btn, .menu-cta-btn),
+    .menu-secondary-links img {
         display: none;
     }
 
     .main-nav .nav-cta {
         order: 3;
-        margin-left: 1.5rem;
         flex-shrink: 0;
+        margin-left: 1.5rem;
     }
 
     .main-nav .nav-cta a {
@@ -3899,18 +3658,12 @@ main.hero-cards > aside li svg {
     }
 
     dialog.mobile-menu-overlay {
-        order: 2;
         position: static;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
+        order: 2;
         flex: 1;
-        width: auto;
+        display: flex;
+        align-items: center;
         height: 100%;
-        max-width: none;
-        max-height: none;
-        margin: 0;
         padding: 0;
         background: transparent;
         box-shadow: none;
@@ -3918,85 +3671,68 @@ main.hero-cards > aside li svg {
     }
 
     .mobile-menu-items {
-        flex-direction: row;
+        display: flex;
         align-items: center;
         gap: 1.5rem;
-        margin-top: 0;
         height: 100%;
     }
 
     .mobile-menu-items > li {
-        width: auto;
         position: relative;
-        height: 100%;
         display: flex;
         align-items: center;
+        height: 100%;
     }
 
     .mobile-menu-items > li:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
         margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
     }
 
-    .menu-row-btn,
-    .menu-row-link {
-        width: auto;
+    :is(.menu-row-btn, .menu-row-link) {
         font-size: 0.92rem;
         white-space: nowrap;
     }
 
-    .menu-row-btn:hover,
-    .menu-row-link:hover {
-        color: var(--color-primary-blue);
-    }
-
     .mobile-menu-items li.is-open > section.submenu-panel {
-        inset: auto;
         top: calc(100% - 0.25rem);
         left: 0;
+        z-index: 20;
         width: max-content;
         min-width: 18rem;
         max-width: 44rem;
         height: auto;
+        padding: 1.5rem 2rem;
         border-radius: 1rem;
         box-shadow: 0 12px 32px rgba(20, 19, 19, 0.14);
-        padding: 1.5rem 2rem;
-        z-index: 20;
+        inset: auto auto auto 0;
     }
 
     .submenu-items {
-        flex-direction: row;
+        display: flex;
         flex-wrap: wrap;
         gap: 2rem;
     }
 
     .submenu-items > li {
-        width: auto;
         min-width: 11rem;
     }
 
     .submenu-items > li:first-child {
         width: 100%;
-        border-bottom: 1px solid var(--color-border-light);
         padding-bottom: 0.75rem;
+        border-bottom: 1px solid var(--color-border-light);
     }
 
     .menu-secondary-links {
+        order: 2;
+        align-self: center;
+        display: flex;
         flex-direction: row;
         align-items: center;
-        width: auto;
-        margin: 0 0 0 auto;
         gap: 1.5rem;
-        order: 3;
-    }
-
-    .menu-secondary-links li {
-        width: auto;
-    }
-
-    .menu-secondary-links img {
-        display: none;
+        margin: 0 0 0 auto;
     }
 
     .menu-secondary-links a {
@@ -4005,7 +3741,7 @@ main.hero-cards > aside li svg {
         white-space: nowrap;
     }
 
-    .menu-secondary-links a:hover {
+    :is(.menu-row-btn, .menu-row-link, .menu-secondary-links a):is(:hover, :focus-visible) {
         color: var(--color-primary-blue);
     }
 }
