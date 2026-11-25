@@ -3419,10 +3419,12 @@ main.hero-cards > aside li svg {
     line-height: 1;
 }
 
-.sleep-page section:nth-of-type(6) label p,
+.sleep-page section:nth-of-type(6) label em,
+.sleep-page section:nth-of-type(6) label small,
 .sleep-page section:nth-of-type(6) label strong {
     grid-column: 1;
 }
+
 
 .sleep-page section:nth-of-type(6) label:first-of-type strong:first-of-type {
     position: absolute;
@@ -3437,10 +3439,13 @@ main.hero-cards > aside li svg {
     border-radius: 0.35rem;
 }
 
-.sleep-page section:nth-of-type(6) label p {
+.sleep-page section:nth-of-type(6) label em,
+.sleep-page section:nth-of-type(6) label small {
+    font-style: normal;
     font-size: 0.85rem;
     opacity: 0.85;
 }
+
 
 .sleep-page section:nth-of-type(6) label strong:last-of-type {
     font-size: 1.3rem;
