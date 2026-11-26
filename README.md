@@ -262,6 +262,9 @@ Ik merk dat ik er alles op zet om deze herkansing te halen ook al kostte me dit 
 
 ### Overige ondersteuning
 * **Bijles & uitleg over JavaScript-concepten:** Neef (software engineer)
-* **Hulp bij logica/uitleg en commentaarstructuur:** [Google Gemini](https://gemini.google.com/app)
+* **Bronnen & AI-gebruik; Hulp bij logica/uitleg en commentaarstructuur:** [Google Gemini](https://gemini.google.com/app)
+  * [Gemini AI Bron 1: CSS-code ordenen en structureren](<Bronnen/Gemini AI Bron 1_CSS-code ordenen en structureren.pdf>) — Gebruikt om CSS-secties en media queries te ordenen en te structureren.
+  * [Gemini AI bron 2: Code overzichtelijker maken](<Bronnen/Gemini AI bron 2_Code overzichtelijker maken.pdf>) — Gebruikt om code overzichtelijker te maken.
+
 
 </details>
